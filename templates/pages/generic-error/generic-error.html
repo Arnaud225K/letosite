@@ -1,0 +1,21 @@
+{% load static %}
+
+
+<main class="thank">
+    <div class="container">
+        <div class="section__title thank_title">
+            <h1 class="nf-h1-error">Ошибка!</h1>
+        </div>
+        <p class="nf-descr">
+            {{ message|safe }}
+        </p>
+        <div class="nf-button-group">
+            <a href="/" class="nf-button nf-button_accent">
+                <div>На главную </div>
+            </a>
+            <a href="/catalog/" class="nf-button nf-button_white">
+                <div>В каталог </div>
+            </a>
+        </div>    
+    </div>
+</main>

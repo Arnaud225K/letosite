@@ -1,0 +1,27 @@
+{% load static %}
+{% load catalog_tags %}
+
+<div class="service-card">
+    <div class="service-card__header">
+        <div class="service-card__image">
+            <img src="{{ service.image.url }}" alt="{{ service.name }}">
+        </div>
+        <div class="service-card__text">
+            <h3 class="service-card__title">{{ service.name }}</h3>
+            <p class="service-card__excerpt">
+                {{ service.description }}
+            </p>
+            <div class="service-card__actions">
+                <div class="service-card__toggle">Подробнее</div>
+                {% include "includes/elements/button-data/button-data-service-zakaz.html" %}
+            </div>
+        </div>
+    </div>
+    <div class="service-card__content">
+        <div class="service-card__content-inner">
+            <div class="service-card__description">
+                <p>{{ service.text|safe }}</p>
+            </div>
+        </div>
+    </div>
+</div>

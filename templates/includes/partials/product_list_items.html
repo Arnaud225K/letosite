@@ -1,0 +1,7 @@
+
+
+{% for product in product_list %}
+    {% include "includes/cards/stocks-card/stocks-card.html" %}
+{% empty %}
+    <p>На этой странице нет товаров.</p>
+{% endfor %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load catalog_tags %}
+
+{% block meta_description %}
+    {% if index_meta_description %}
+	    {{ index_meta_description|my_safe:current_filial|safe|clean_html }}
+    {% endif %}
+{% endblock %}
+
+{% block meta_keywords %}
+    {% if index_meta_keywords %}
+	    {{ index_meta_keywords|my_safe:current_filial|safe|clean_html }}
+    {% endif %}
+{% endblock %}
+
+{% block title_page %}
+    {% if index_title_page %}
+	    {{ index_title_page|my_safe:current_filial|safe|clean_html }}
+    {% endif %}
+{% endblock %}
+
+{% block title_page_og %}
+    {% if index_title_page %}
+	    {{ index_title_page|my_safe:current_filial|safe|clean_html }}
+    {% endif %}
+{% endblock %}
+
+{% block meta_description_og %}
+    {% if index_meta_description %}
+	    {{ index_meta_description|my_safe:current_filial|safe|clean_html }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <main>
+        <!-- COVER MAIN PAGE-->
+        {% include "pages/main/s-main-cover.html" %}
+        <!-- HITS -->
+        {% include "pages/main/s-main-hits.html" %}
+        <!-- PROMO -->
+        {% include "pages/main/s-main-promo.html" %}
+        <!-- CATALOG -->
+        {% include "pages/main/s-main-catalog.html" %}
+        <!-- FORM CALCUL COST -->
+        {% include "pages/main/s-main-form-calcul.html" %}
+
+    </main>
+{% endblock %}
+

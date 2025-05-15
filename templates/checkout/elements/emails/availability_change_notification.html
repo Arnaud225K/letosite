@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Изменения доступности продуктов</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.5; }
+        .unavailable { color: red; font-weight: bold; }
+        .available { color: green; font-weight: bold; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h2>Изменения доступности продуктов</h2>
+    <p>
+        Обнаружены изменения в доступности продуктов, произошедшие примерно с {{ start_time_iso|date:"Y-m-d H:i" }}
+        (время проверки: {{ update_time|date:"Y-m-d H:i" }}).
+    </p>
+    <ul>
+        <li><strong class="unavailable">{{ newly_unavailable_count }}</strong> продуктов стали "Нет в наличии".</li>
+        <li><strong class="available">{{ newly_available_count }}</strong> продуктов стали "В наличии".</li>
+        <li>Всего изменений: {{ total_changes }}.</li>
+    </ul>
+
+    {% if report_url %}
+        <p>
+            <a href="{{ report_url }}" download="{{ report_filename }}">
+                <strong>Скачать подробный отчет ({{ report_filename }})</strong>
+            </a>
+        </p>
+        <p><small>Внимание: Ссылка может быть временной или требовать авторизации.</small></p>
+    {% elif report_filename %}
+        <p>Подробный отчет был сгенерирован как "{{ report_filename }}", но ссылка для скачивания недоступна. Файл сохранен на сервере.</p>
+    {% else %}
+        <p>Не удалось сгенерировать подробный отчет.</p>
+    {% endif %}
+
+    <p>Пожалуйста, используйте отчет для обновления рекламных кампаний.</p>
+</body>
+</html>

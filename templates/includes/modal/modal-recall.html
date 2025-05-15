@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="modal modal-recall">
+    <div class="modal__close modal__close-recall">
+        <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <line x1="1" y1="15" x2="15" y2="1" stroke="#B2B9C1" stroke-width="2"></line>
+            <line x1="1" y1="1" x2="15" y2="15" stroke="#B2B9C1" stroke-width="2"></line>
+        </svg>
+    </div>
+    <div class="modal__title">
+        Оставьте свой номер телефона<p>Мы свяжемся с Вами в ближайшее время</p>
+    </div>
+    <form class="modal__form" id="form_callback_id" method="post" action="{% url 'checkout:send_form_order' %}" onsubmit="return send_form_order('form_callback_id');"> 
+        {% csrf_token %}
+        <input name="form_input" value="">
+        <input type="hidden" name="comment" value="{{ current_menu.name }}">
+        <input type="hidden" name="email" value="call@leto-moskva.ru">
+        <input type="hidden" name="type" value="Запрос обратного звонка">   
+
+        <input type="text" name="name" placeholder="Имя">
+        <input type="tel" name="phone" placeholder="Телефон*" required data-phone>
+        <div id="phone-error" class="phone-error" style="display:none; color:red;">Неправильный номер телефона</div>
+        <div class="block__agreement">
+            <label>
+                <input type="checkbox" name="agreement" checked="checked" required>
+                <div class="custom-icon"></div>
+                <span>Отправляя форму, вы даете согласие на <a href="/policy/" target="_blank" class="contacts-form-link">обработку персональных данных</a></span>
+            </label>
+            <div class="invalid-feedback error js-error" style="display:none;"></div> 
+            
+            <button type="submit" id="popup-callback-btn" class="submit-form-btn">Перезвоните мне</button>
+        </div>
+    </form>
+</div>

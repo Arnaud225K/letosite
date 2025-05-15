@@ -1,0 +1,34 @@
+{% comment %} <div class="container menu-wrapper">
+    <div class="menu">
+        <div class="menu__tabs"> 
+            <a class="tablink" href="#" data-target="basseiny">БАССЕЙНЫ И АКСЕССУАРЫ</a>
+            <a class="tablink" href="#" data-target="himiya">ХИМИЯ ДЛЯ БАССЕЙНОВ И САУН</a>
+            <a class="tablink" href="#" data-target="podogrev">ПОДОГРЕВ ВОДЫ</a>
+        </div>
+        <div class="menu__content">
+            <div class="tabcontent" id="basseiny">
+            <a href="#">Дозаторы, термометры</a>
+            <a href="#">Дозаторы, термометры</a>
+            <a href="#">Дозаторы, термометры</a>
+            </div>
+            <div class="tabcontent" id="himiya">
+            <a href="#">Теплообменники</a>
+            <a href="#">Теплообменники</a>
+            <a href="#">Теплообменники</a>
+            </div>
+            <div class="tabcontent" id="podogrev">
+            <a href="#">Донные сливы</a>
+            <a href="#">Донные сливы</a>
+            <a href="#">Донные сливы</a>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+
+<div class="container menu-wrapper" id="menu-dropdown-container">
+    <div id="menu-dropdown-content-wrapper">
+        <div class="menu-loader" style="padding: 20px; text-align: center; display: none;">Загрузка...</div>
+        {% include "includes/partials/_menu_dropdown_content.html" %}
+    </div>
+</div>

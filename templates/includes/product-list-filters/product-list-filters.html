@@ -1,0 +1,99 @@
+
+{% comment %} <div class="category-filters">
+    <div class="category-filters__item">
+        <div class="category-filters__item-caption">Тип фильтра</div>
+        <form class="category-filters__wrapper" action="">
+            <div class="category-filters__item-filter">
+                <label>
+                    <input type="checkbox" name="agreement_2" checked required>
+                    <div class="custom-icon"></div>
+                    <div>Песочный</div>
+                </label>
+                <div class="amount">27</div>
+            </div>
+        </form>
+    </div>
+    <div class="category-filters__item">
+        <div class="category-filters__item-caption">Производитель</div>
+        <form class="category-filters__wrapper" action="">
+        <div class="category-filters__item-filter"><label><input type="checkbox" name="agreement_2" checked
+                required>
+            <div class="custom-icon"></div>
+            <div>Aquaviva</div>
+            </label>
+            <div class="amount">17</div>
+        </div>
+        <div class="category-filters__item-filter"><label><input type="checkbox" name="agreement_2" checked
+                required>
+            <div class="custom-icon"></div>
+            <div>Hayward</div>
+            </label>
+            <div class="amount">11</div>
+        </div>
+        <div class="category-filters__item-filter"><label><input type="checkbox" name="agreement_2" checked
+                required>
+            <div class="custom-icon"></div>
+            <div>Aquaviva</div>
+            </label>
+            <div class="amount">17</div>
+        </div>
+        <div class="category-filters__item-filter"><label><input type="checkbox" name="agreement_2" checked
+                required>
+            <div class="custom-icon"></div>
+            <div>Hayward</div>
+            </label>
+            <div class="amount">11</div>
+        </div>
+        <div class="category-filters__item-filter"><label><input type="checkbox" name="agreement_2" checked
+                required>
+            <div class="custom-icon"></div>
+            <div>Aquaviva</div>
+            </label>
+            <div class="amount">17</div>
+        </div>
+        <div class="category-filters__item-filter"><label><input type="checkbox" name="agreement_2" checked
+                required>
+            <div class="custom-icon"></div>
+            <div>Hayward</div>
+            </label>
+            <div class="amount">11</div>
+        </div>
+        </form>
+    </div>
+</div> {% endcomment %}
+
+
+{# Le formulaire pointe vers la vue AJAX de filtrage #}
+{# L'URL d'action n'est plus utilisée directement pour GET #}
+<form id="filters-form" method="get" action="." data-ajax-filter-url="{% url 'menu:ajax_filter_products' %}" data-category-slug="{{ current_menu.slug }}">
+        {# Champ caché pour le tri (optionnel, peut être lu depuis le select) #}
+        <input type="hidden" name="sort" id="current-sort-input" value="{{ sort_type|default:'' }}">
+        {# Champ caché pour la catégorie (utile pour JS) #}
+        <input type="hidden" name="category_slug" value="{{ current_menu.slug }}">
+
+    <div class="category-filters">
+        {% for cat_slug, cat_data in available_filters.items %}
+            <div class="category-filters__item">
+                <div class="category-filters__item-caption">{{ cat_data.name }}</div>
+                {% for val_slug, val_data in cat_data.values.items %}
+                    <div class="category-filters__item-filter">
+                        <label>
+                            <input type="checkbox"
+                                    name="{{ cat_slug }}" {# Nom = slug catégorie #}
+                                    value="{{ val_slug }}" {# Valeur = slug valeur #}
+                                    class="filter-checkbox" {# Classe pour JS #}
+                                    {% if val_data.is_active %}checked{% endif %}>
+                            <div class="custom-icon"></div>
+                            <div>{{ val_data.name }}</div>
+                        </label>
+                            <div class="amount" data-filter-count="{{ cat_slug }}-{{ val_slug }}">
+                                {{ val_data.count }}
+                            </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    {# Pas de bouton submit nécessaire, JS gère au 'change' #}
+    <a href="{{ base_category_url }}" class="clear-filters-link" style="display: block; margin-top: 15px;">Сбросить все фильтры</a>
+</form>

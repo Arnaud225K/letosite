@@ -1,0 +1,75 @@
+{% load static %}
+
+{% comment %} <div class="menu">
+    <div class="menu__tabs">
+        {% for item_l1 in menu_tabs_items %}
+            <a class="tablink {% if forloop.first %}active{% endif %}"
+                href="{{ item_l1.get_absolute_url }}"
+                data-target="menu-tab-{{ item_l1.slug }}">
+                {{ item_l1.name }}
+            </a>
+        {% empty %}
+            <span class="no-categories-message">Категории не найдены.</span>
+        {% endfor %}
+    </div>
+    <div class="menu__content">
+        {% for item_l1 in menu_tabs_items %}
+            <div class="tabcontent {% if forloop.first %}active{% endif %}"
+                id="menu-tab-{{ item_l1.slug }}">
+
+                {% for item_l2 in item_l1.cached_children %}
+                    <a href="{{ item_l2.get_absolute_url }}">
+                        {{ item_l2.name }}
+                    </a>
+                {% empty %}
+                    {# <p>Нет подкатегорий для {{ item_l1.name }}.</p> #}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div> {% endcomment %}
+
+<div class="menu">
+    {# Colonne 1 : Niveau 1  #}
+    <div class="menu__columns">
+        <div class="menu__column menu__column--l1">
+            {% for item_l1 in menu_tabs_items %}
+                <a class="l1-link {% if forloop.first %}active{% endif %}"
+                data-target="l2-{{ item_l1.slug }}"
+                href="{{ item_l1.get_absolute_url }}">
+                {{ item_l1.name }}
+                </a>
+            {% endfor %}
+        </div>
+        
+        {# Colonne 2 : Niveau 2  #}
+        {% for item_l1 in menu_tabs_items %}
+            <div class="menu__column menu__column--l2 l2-{{ item_l1.slug }}{% if forloop.first %} active{% endif %}">
+                {% for item_l2 in item_l1.cached_children %}
+                <a class="l2-link"
+                    data-target="l3-{{ item_l2.slug }}"
+                    href="{{ item_l2.get_absolute_url }}">
+                    {{ item_l2.name }}
+                </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        
+        {# Colonne 3 : Niveau 3 #}
+        {% for item_l1 in menu_tabs_items %}
+            {% for item_l2 in item_l1.cached_children %}
+                {% if item_l2.cached_children %}
+                    <div class="menu__column menu__column--l3 l3-{{ item_l2.slug }}">
+                    {% for item_l3 in item_l2.cached_children %}
+                        <a class="l3-link" href="{{ item_l3.get_absolute_url }}">
+                        {{ item_l3.name }}
+                        </a>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+

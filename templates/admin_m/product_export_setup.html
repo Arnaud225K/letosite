@@ -1,0 +1,118 @@
+{# admin_m/templates/admin_m/product_export_setup.html #}
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+{# ... (Blocs extrastyle avec CSS pour Select2) ... #}
+{% block extrastyle %} ... {{ form.media.css }} ... {% endblock %}
+
+{% block content %}
+<div id="content-main">
+    {# Action GET vers la vue de téléchargement #}
+    <form method="get" action="{% url 'admin_m:product_export_download' %}">
+        <h1>{{ title }}</h1>
+        <p>Выберите категорию и опционально уточните колонки фильтров для экспорта.</p>
+        <fieldset class="module aligned">
+            <h2>Параметры экспорта</h2>
+            {# Champ Catégorie (Select2) #}
+            <div class="form-row field-category">
+                 {{ form.category.errors }}
+                 <div class="flex-container">
+                    <label class="required" for="{{ form.category.id_for_label }}">{{ form.category.label }}:</label>
+                    {{ form.category }} {# Rend Select2Widget #}
+                 </div>
+                 {% if form.category.help_text %}<div class="help">{{ form.category.help_text|safe }}</div>{% endif %}
+            </div>
+            {# Champ Filtres à Exporter (Select2 Multiple) #}
+            <div class="form-row field-filter_categories_to_export">
+                 {{ form.filter_categories_to_export.errors }}
+                 <div class="flex-container">
+                     <label for="{{ form.filter_categories_to_export.id_for_label }}">{{ form.filter_categories_to_export.label }}:</label>
+                     {{ form.filter_categories_to_export }} {# Rend Select2MultipleWidget #}
+                 </div>
+                 {% if form.filter_categories_to_export.help_text %}
+                     <div class="help">{{ form.filter_categories_to_export.help_text|safe }}</div>
+                 {% endif %}
+             </div>
+        </fieldset>
+        <div class="submit-row">
+            <input type="submit" value="Экспорт в Excel" class="default">
+             <a href="{% url 'admin:menu_product_changelist' %}" class="button cancel-link">{% translate "Cancel" %}</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+{% block extrajs %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.min.js' %}"></script>
+    {{ form.media.js }}
+
+    <script>
+        $(document).ready(function() { 
+            const categorySelect = $('#{{ form.category.id_for_label }}');
+            const filterSelect = $('#{{ form.filter_categories_to_export.id_for_label }}');
+            const loadingIndicator = $('#filter-loading-indicator');
+            const ajaxUrlTemplate = "{% url 'admin_m:ajax_get_relevant_filters' category_id=0 %}".replace('/0/', '/{categoryId}/'); 
+
+            if (categorySelect.length && filterSelect.length && ajaxUrlTemplate) {
+                console.log("Initializing dynamic filter pre-selection...");
+
+                categorySelect.on('select2:select select2:clear', function(e) {
+                    const selectedCategoryId = $(this).val();
+                    console.log("Category changed/cleared to:", selectedCategoryId);
+
+                    // Vide toujours les filtres d'abord quand la catégorie change
+                    filterSelect.val(null).trigger('change.select2'); // Déselectionne tout
+
+                    if (selectedCategoryId) {
+                        filterSelect.prop('disabled', true); // Désactive pendant chargement
+                        loadingIndicator.show();
+                        const url = ajaxUrlTemplate.replace('{categoryId}', selectedCategoryId);
+                        console.log("Fetching relevant filters from:", url);
+
+                        $.ajax({
+                            url: url,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(data) {
+                                console.log("Received relevant filter IDs:", data.relevant_filter_ids);
+                                if (data.relevant_filter_ids && data.relevant_filter_ids.length > 0) {
+                                    // PRÉ-SÉLECTIONNE les filtres retournés
+                                    filterSelect.val(data.relevant_filter_ids).trigger('change.select2'); // 'change.select2' pour màj visuelle
+                                }
+                                // Si vide, reste vide (déjà fait)
+                            },
+                            error: function(xhr, status, error) {
+                                console.error("Error fetching relevant filters:", status, error);
+                                // Optionnel: Afficher un message d'erreur à l'utilisateur
+                                // filterSelect.val(null).trigger('change.select2'); // Assure la désélection en cas d'erreur
+                            },
+                            complete: function() {
+                                filterSelect.prop('disabled', false); // Réactive
+                                loadingIndicator.hide();
+                                console.log("Filter pre-selection attempt complete.");
+                            }
+                        });
+                    } else {
+                         filterSelect.prop('disabled', false); // Réactive si catégorie effacée
+                         loadingIndicator.hide();
+                    }
+                });
+
+                // Déclencher au chargement si une catégorie est déjà sélectionnée ?
+                if (categorySelect.val()) {
+                     console.log("Triggering initial filter load for pre-selected category:", categorySelect.val());
+                     // Déclencher l'événement Select2 pour charger les filtres initiaux
+                     // Utiliser setTimeout pour s'assurer que Select2 est pleinement initialisé
+                     setTimeout(function() {
+                         categorySelect.trigger('select2:select');
+                     }, 100); // Petit délai
+                }
+
+            } else {
+                console.warn("Could not find category or filter select elements for dynamic pre-selection.");
+            }
+        });
+    </script>
+    {# ------------------------------------------------- #}
+
+{% endblock %}

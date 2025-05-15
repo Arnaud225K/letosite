@@ -1,0 +1,41 @@
+{% load static %}
+{% load catalog_tags %}
+
+
+<div class="dynamic__header">
+    <nav class="container">
+        <div class="nav__wrapper">
+            <div class="nav__wrapper-top">
+                <a class="nav__logo" href="{% url 'menu:index' %}"><img src="{% static 'img/icons/logo-light.svg' %}" alt="logo"></a>
+                <div class="nav__schedule"></div>
+                <div class="nav__phone">
+                    <a class="nav__phone-item" href="tel:{{ current_filial.phone|remove_space_href}}">
+                        <img src="{% static 'img/images/call-calling.webp' %}" alt="call-calling">
+                        <span>{{ current_filial.phone }}</span>
+                    </a>
+                    <a class="nav__phone-item" href="#">
+                        <img src="{% static 'img/images/telegram_white.webp' %}" alt="telegram_white">
+                        <span>Telegram</span>
+                    </a>
+                </div>
+                {% comment %} <div class="nav__search"> 
+                    <input type="search" name="search" placeholder="Поиск">
+                    <button class="nav__search-icon" type="submit"> 
+                        <img src="{% static 'img/images/search.webp' %}" alt="search">
+                    </button>
+                </div> {% endcomment %}
+                <div class="nav__search">
+                <form class="k_searchbox" method="GET" action="{% url 'search:results' %}"> 
+                    <input type="search" name="search" placeholder="Поиск" value="{{ search_text }}">
+                    <button class="nav__search-icon" type="button"><img src="{% static 'img/images/search.webp' %}" alt="search"></button>
+                </form>
+                </div>
+                <button type="button" data-open="recall">Заказать звонок</button>
+                <a class="nav__cart" href="{% url 'checkout:checkout_page' %}" title="Перейти в корзину">
+                    <sup id="dynamic-header-cart-count" class="dynamic-cart-counter">{{ cart_total_items|default:0 }}</sup>
+                    <img src="{% static 'img/images/shopping-cart.webp' %}" alt="Корзина">
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>

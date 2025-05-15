@@ -1,0 +1,39 @@
+{% load static %}
+{% load catalog_tags %}
+{% load humanize %}
+
+<div class="category-list__product">
+    <div class="img"> 
+        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+        {% if not product.available %}
+            <div class="out-of-stock-label">Нет в наличии</div>
+        {% endif %}
+    </div>
+    <div class="caption">
+        <a class="caption__catalog" href="{{ product.catalog.get_absolute_url }}">
+            <span class="caption__catalog_name">{{ product.catalog.name }}</span>
+        </a>
+        <a class="caption__name" href="{{ product.get_absolute_url }}">
+            <span class="product_caption__name">{{ product.title }}</span>
+        </a>
+    </div>
+    {% if product.price > 0 %}
+        <div class="price">{{ product.price|intcomma }} ₽</div>
+    {% else %}
+        Цена по запросу
+    {% endif %}
+    {% if product.available %}
+        <form class="add-to-cart-form">
+            {% csrf_token %}
+            <input type="hidden" name="quantity" value="1">
+            
+            <button type="button" class="btn btn-primary add-to-cart-button"
+                    data-product-id="{{ product.id }}"
+                    data-add-url="{% url 'checkout:cart_add' product.id %}">
+                В корзину
+            </button>
+        </form>   
+    {% else %}
+        {% include "includes/elements/button-data/button-data-pod-zakaz.html" %}
+    {% endif %}
+</div>

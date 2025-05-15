@@ -1,0 +1,12 @@
+<button type="button" class="add_call btn-open-product-modal" 
+    data-open="buy"
+    data-modal-target="#product-order-modal"
+    data-order-type="Под заказ"
+    data-product-id="{{ product.id }}"
+    data-product-sku="{{ product.sku }}"
+    data-product-title="{{ product.title|escape }}"
+    data-product-price="{{ product.price|floatformat:"0" }}"
+    data-product-image="{{ product.image.url }}"
+    data-quantity-input-id="product-quantity-{{ product.id }}">
+    Под заказ
+</button>

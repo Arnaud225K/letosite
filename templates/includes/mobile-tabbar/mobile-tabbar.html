@@ -1,0 +1,28 @@
+{% load static %}
+
+<div class="tabbar">
+    <div class="container">
+    <div class="tabbar-wrap">
+        <a class="tabbar__item active" href="{% url 'menu:index' %}">
+            <div class="tabbar__item-image"><img src="{% static 'img/images/tabbar_home.webp' %}" alt=""></div>
+            <div class="tabbar__item-title">Главная</div>
+        </a>
+        <a class="tabbar__item" href="/catalog/">
+            <div class="tabbar__item-image"><img src="{% static 'img/images/tabbar_catalog.webp' %}" alt="tabbar_catalog"></div>
+            <div class="tabbar__item-title"> Каталог</div>
+        </a>
+        <a class="tabbar__item" href="/uslugi/">
+            <div class="tabbar__item-image"><img src="{% static 'img/images/tabbar_service.webp' %}" alt="tabbar_service"></div>
+            <div class="tabbar__item-title"> Услуги</div>
+        </a>
+        <a class="tabbar__item" href="{% url 'checkout:checkout_page' %}">
+            <div class="tabbar__item-image"> <img src="{% static 'img/images/tabbar_shopping-cart.webp' %}" alt="tabbar_shopping-cart"></div>
+            <div class="tabbar__item-title"> Корзина</div>
+        </a>
+        <a class="tabbar__item" href="/contacts/">
+            <div class="tabbar__item-image"> <img src="{% static 'img/images/tabbar_contacts.webp' %}" alt="tabbar_contacts"></div>
+            <div class="tabbar__item-title"> Контакты</div>
+        </a>
+    </div>
+    </div>
+</div>

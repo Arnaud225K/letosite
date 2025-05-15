@@ -1,0 +1,19 @@
+{% load static %}
+{% load humanize %}
+
+<div id="add-to-cart-modal" class="add-product-modal">
+    <div class="add-product-modal-content">
+        <button type="button" class="close-modal-button" aria-label="Закрыть">×</button>
+        <div class="add-product">
+            <div class="add-product__caption">Добавлено в корзину:</div>
+            <div class="add-product__image">
+                <img src="" alt="" id="add-modal-product-image">
+            </div>
+            <div class="add-product__title" id="add-modal-product-title"></div>
+        </div>
+        <div class="modal-actions">
+            <button type="button" class="btn btn-modal-thx-left continue-shopping-button">Продолжить покупки</button>
+            <a href="{% url 'checkout:checkout_page' %}" class="btn btn-modal-thx-right  view-cart-button">Перейти в корзину</a>
+        </div>
+    </div>
+</div>

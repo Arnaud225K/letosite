@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}    
+{% block content %}
+<section class="block_content">
+    <div class="container container-embed">
+        <span>{{ current_menu.name }}</span>
+            <ul class="categ_list_child">
+                {% for child in current_menu.get_child %}
+                    <li>
+                        <a href="{{ child.get_absolute_url }}">
+                            <span>{{ child.name }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        {% if product_list %}
+            <ul class="categ_list_child">
+                {% for product in product_list %}
+                        <li>
+                            <a href="{{ product.get_absolute_url }}">
+                                <span>{{ product.title }}</span>
+                            </a><br>
+                            {% if product.available %}
+                                <span>Недоступен</span>
+                            {% else %}
+                                <span>Доступен</span>
+                            {% endif %}
+                            <div class="product-card-info_img">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200" height="200"> 
+                            </div>
+                        </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

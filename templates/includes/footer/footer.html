@@ -1,0 +1,42 @@
+{% load static %}
+{% load catalog_tags %}
+{% load l10n %}
+
+<!-- TABBAR-->
+{% include "includes/mobile-tabbar/mobile-tabbar.html" %}
+<!-- BUY 1 CLICK POPUP-->
+{% include "includes/modal/modal-buy.html" %}
+<!-- MODAL RECALL -->
+{% include "includes/modal/modal-recall.html" %}
+<!-- MODAL RECALL -->
+{% include "includes/modal/modal-feedback.html" %}
+<!-- ADD PRODUCT POPUP -->
+{% include "includes/modal/modal-add-product.html" %}
+
+<footer>
+    <div class="container">
+        <div class="footer-wrap">
+            <div class="footer-wrap__title">сделай шаг навстречу своему бассейну</div>
+            <ul class="footer-wrap__links">
+                <li> <a href="/catalog/">Каталог</a></li>
+                <li> <a href="/stroitelstvo/">Строительство</a></li>
+                <li> <a href="/uslugi/">Услуги</a></li>
+                <li> <a href="/akcii/">Акции</a></li>
+                <li> <a href="/dostavka-i-oplata/">Доставка и оплата</a></li>
+                <li> <a href="/obmen-i-vozvrat/">Возврат</a></li>
+                <li> <a href="/contacts/">Контакты</a></li>
+                <li> <a href="/policy/">Политика конфиденциальности</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <div class="footer-copyright__block_left">
+                <p>© Copyright "Лето Москва", {{ current_year|unlocalize }}</p>
+                <p>г. Москва</p>
+            </div>
+            <div class="footer-copyright__block_right">
+                <p> <a href="tel:{{ current_filial.phone|remove_space_href}}">{{ current_filial.phone }}</a></p>
+                <p> <a href="mailto:{{ current_filial.email }}">{{ current_filial.email }}</a></p>
+            </div>
+        </div>
+    </div>
+</footer>

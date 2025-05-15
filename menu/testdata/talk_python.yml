@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yml_catalog date="2025-01-16T09:01+03:00">
+<shop>
+<name>aquapolis.ru</name>
+<company>aquapolis.ru</company>
+<url>https://aquapolis.ru/</url>
+<currencies>
+<currency id="RUR" rate="1"/>
+</currencies>
+<categories>
+<category id="170">Освещение для бассейнов</category>
+<category id="171">Лестницы и поручни для бассейна</category>
+<category id="172">Оборудование для саун</category>
+<category id="173">Закладные для бассейна</category>
+<category id="174">Водопады для бассейнов</category>
+<category id="175">Оборудование для бассейнов</category>
+<category id="176">Бассейны и СПА</category>
+<category id="177">Отделочные материалы</category>
+<category id="178">Трубопроводные системы ПВХ</category>
+<category id="179">Горячие предложения</category>
+<category id="180">Акваполис рекомендует</category>
+<category id="181">Уход за бассейном</category>
+<category id="182">Промо</category>
+<category id="183">Оборудование Hayward</category>
+<category id="184">Трубопроводные системы ПВХ Del</category>
+<category id="185">Купели и аксессуары</category>
+<category id="186">Запчасти</category>
+<category id="187">Оборудование Hayward_test</category>
+<category id="188">Брендированная продукция</category>
+<category id="189">Распродажа</category>
+<category id="190">Сервисный центр</category>
+<category id="191">Пруды и фонтаны</category>
+<category id="192">Фонтаны</category>
+<category id="193">Детские товары</category>
+<category id="194" parentId="176">Бассейны</category>
+<category id="195" parentId="176">Аксессуары</category>
+<category id="196" parentId="175">Насосы для бассейнов</category>
+<category id="197" parentId="175">Компрессоры для бассейнов</category>
+<category id="198" parentId="175">Фильтры для бассейна</category>
+<category id="199" parentId="176">Аквафитнес и отдых на воде</category>
+<category id="200" parentId="176">Уход за бассейном</category>
+<category id="201" parentId="175">Оборудование для дезинфекции воды</category>
+<category id="202" parentId="177">Строительные смеси для бассейнов</category>
+<category id="203" parentId="177">Плитка и мозаика</category>
+<category id="204" parentId="175">Теплообменники и электронагреватели</category>
+<category id="205" parentId="175">Осушители воздуха</category>
+<category id="206" parentId="177">Лайнер</category>
+<category id="207" parentId="176">Каяки</category>
+<category id="208" parentId="175">Отопление и водоподготовка</category>
+<category id="209" parentId="186">Запчасти к котлам</category>
+<category id="210" parentId="178">Металлопластиковые трубы и пресс-фитинги </category>
+<category id="211" parentId="175">Противотоки для бассейнов</category>
+<category id="212" parentId="182">Бассейны</category>
+<category id="213" parentId="182">Оборудование</category>
+<category id="214" parentId="182">Строительство</category>
+<category id="215" parentId="172">Инфракрасные кабины</category>
+<category id="216" parentId="172">Парогенераторы</category>
+<category id="217" parentId="172">Электрокаменки</category>
+<category id="218" parentId="172">Аксессуары и запчасти</category>
+<category id="219" parentId="175">Станции контроля и управления бассейном</category>
+<category id="220" parentId="173">Форсунки для бассейна</category>
+<category id="221" parentId="173">Скиммеры для бассейнов</category>
+<category id="222" parentId="173">Донные сливы для бассейна</category>
+<category id="223" parentId="173">Переливные системы</category>
+<category id="224" parentId="173">Другие закладные и аксессуары</category>
+<category id="225" parentId="177">Оборудование для автоматизации</category>
+<category id="226" parentId="178">Трубы ПВХ</category>
+<category id="227" parentId="178">Фитинги ПВХ</category>
+<category id="228" parentId="178">Запорная арматура ПВХ</category>
+<category id="229" parentId="177">Копинговый камень</category>
+<category id="230" parentId="185">Купели</category>
+<category id="231" parentId="185">Аксессуары</category>
+<category id="232" parentId="185">Печи</category>
+<category id="233" parentId="176">Аквапарки</category>
+<category id="234" parentId="186">Запчасти для насосов</category>
+<category id="235" parentId="186">Запчасти для фильтров и фильтрационных установок</category>
+<category id="236" parentId="186">Запчасти для водных пылесосов</category>
+<category id="237" parentId="186">Запчасти для дезинфицирующего оборудования</category>
+<category id="238" parentId="186">Запчасти для дозирующих насосов</category>
+<category id="239" parentId="186">Запчасти для осушителей воздуха</category>
+<category id="240" parentId="186">Запчасти для теплообменников и электронагревателей</category>
+<category id="241" parentId="186">Запчасти для саун, парогенераторов и электрокаменок</category>
+<category id="242" parentId="186">Запчасти для противотоков и аттракционов</category>
+<category id="243" parentId="186">Запчасти для прожекторов и осветительного оборудования бассейнов</category>
+<category id="244" parentId="186">Запчасти для лестниц и поручней бассейнов</category>
+<category id="245" parentId="186">Запчасти для закладных элементов бассейнов</category>
+<category id="246" parentId="186">Запчасти для спа-бассейнов</category>
+<category id="247" parentId="186">Другие запчасти</category>
+<category id="248" parentId="182">Трубы и фитинги</category>
+<category id="249" parentId="175">Фильтрационные установки</category>
+<category id="250" parentId="176">Накрытия на бассейн</category>
+<category id="261" parentId="176">Серфинг тренажеры</category>
+<category id="262" parentId="175">Оборудование для нагрева воды</category>
+<category id="263" parentId="186">Запчасти для тепловых насосов</category>
+<category id="264" parentId="175">Картриджи и песок для фильтров</category>
+<category id="265" parentId="177">Плитка для бассейна</category>
+<category id="266" parentId="177">Бортовая плитка</category>
+<category id="267" parentId="177">Мозаика для бассейна</category>
+<category id="268" parentId="178">Клей и праймер для ПВХ</category>
+<category id="269" parentId="176">Уличная мебель</category>
+<category id="270" parentId="177">Акриловые стекла</category>
+<category id="271" parentId="173">Закладные для гидро и аэромассажа</category>
+<category id="272" parentId="175">Подъемники для инвалидов в бассейн</category>
+<category id="273" parentId="176">Разделительные дорожки для бассейна</category>
+<category id="274" parentId="176">Стартовые платформы</category>
+<category id="275" parentId="177">Террасная плитка</category>
+<category id="276" parentId="177">Керамогранит</category>
+<category id="277" parentId="193">Детские бассейны</category>
+<category id="278" parentId="193">Жилеты и нарукавники</category>
+<category id="279" parentId="193">Надувные матрасы и круги для аквапарков</category>
+<category id="280" parentId="178">Фитинги для наружной канализации</category>
+<category id="281" parentId="176">Туманообразование</category>
+<category id="282">Химия для бассейна</category>
+<category id="283" parentId="195">Душ для бассейна</category>
+<category id="284" parentId="200">Пылесосы для бассейна</category>
+<category id="285" parentId="262">Тепловые насосы для бассейна</category>
+<category id="286" parentId="250">Теплосберегающее покрытие</category>
+<category id="287" parentId="201">Дозирующие насосы</category>
+<category id="288" parentId="208">Газовые котлы</category>
+<category id="289" parentId="208">Дымоходы</category>
+<category id="290" parentId="195">Аксессуары для уборки бассейна</category>
+<category id="291" parentId="195">Градусники для бассейнов</category>
+<category id="292" parentId="250">Покрытия на бассейн</category>
+<category id="293" parentId="250">Покрытие под бассейн</category>
+<category id="294" parentId="195">Ремонтный комплект для бассейна</category>
+<category id="295" parentId="195">Прочие аксессуары</category>
+<category id="296" parentId="195">Дозаторы химии</category>
+<category id="297" parentId="262">Теплообменники</category>
+<category id="298" parentId="262">Электронагреватели</category>
+<category id="299" parentId="204">Комплектующие</category>
+<category id="300" parentId="201">Хлоргенераторы</category>
+<category id="301" parentId="201">Генераторы озона</category>
+<category id="302" parentId="201">Бесхлорные системы</category>
+<category id="303" parentId="201">Ультрафиолетовые установки</category>
+<category id="304" parentId="201">Аксессуары и расходники</category>
+<category id="305" parentId="208">Водоподготовка</category>
+<category id="306" parentId="208">Отопительное оборудование</category>
+<category id="307" parentId="262">Солнечные нагреватели</category>
+<category id="308" parentId="250">Наматывающее устройство</category>
+<category id="309" parentId="250">Ролеты</category>
+<category id="310" parentId="250">Батутные накрытия</category>
+<category id="312" parentId="195">Ограждение для бассейна</category>
+<category id="313" parentId="284">Запчасти и аксессуары</category>
+<category id="378">Закладные для бассейна</category>
+<category id="379" parentId="178">Трубы ПВХ для наружной канализации</category>
+<category id="380" parentId="195">Противоскользящие покрытия</category>
+<category id="381" parentId="201">Озонаторы</category>
+<category id="388">Насосное оборудование</category>
+<category id="382" parentId="388">Циркуляционные насосы</category>
+<category id="386">Тепловые насосы для дома</category>
+<category id="387" parentId="178">Муфтовые компенсаторы</category>
+<category id="389" parentId="388">Вертикальные многоступенчатые насосы</category>
+<category id="390" parentId="388">Насосные станции</category>
+<category id="391" parentId="388">Насосы для колодцев</category>
+<category id="392" parentId="388">Центробежные насосы</category>
+<category id="393" parentId="388">Горизонтальные многоступенчатые насосы</category>
+<category id="394" parentId="388">Дренажные насосы</category>
+<category id="395" parentId="177">Террасная доска ДПК</category>
+<category id="396">Пергола металлическая</category>
+<category id="397" parentId="189">Бассейны</category>
+<category id="398" parentId="189">Шезлонги и мебель</category>
+<category id="399" parentId="189">Насосы для бассейна</category>
+<category id="400" parentId="189">Насосы для колодца</category>
+<category id="401" parentId="189">Хлоргенераторы</category>
+<category id="402" parentId="189">Форсунки и насадки</category>
+<category id="403" parentId="189">Отделочные материалы</category>
+<category id="404" parentId="189">Мозаика и фриз для бассейна</category>
+<category id="405" parentId="189">Плитка для бассейна</category>
+<category id="406" parentId="189">Щетки для стен и дна</category>
+<category id="407" parentId="189">Роботы пылесосы для бассейна</category>
+<category id="408" parentId="189">Панель управления фильтрацией</category>
+<category id="409" parentId="189">Освещение бассейна</category>
+<category id="410" parentId="189">Закладные для бассейна</category>
+<category id="411" parentId="189">Дренажные насосы</category>
+<category id="412" parentId="189">Циркуляционные насосы</category>
+<category id="413" parentId="189">Центробежные насосы</category>
+<category id="414" parentId="189">Лестницы для бассейна</category>
+<category id="415" parentId="189">Аксессуары для бассейна</category>
+<category id="416" parentId="189">Скиммеры</category>
+</categories>
+<offers>
+<offer id="6861" available="true">
+<url>https://aquapolis.ru/gidromassazhnyj-bassejn-ique-capri-2100-cdl-bp-wifi-212h112h74-sm.html</url>
+<price>1243049</price>
+<categoryId>194</categoryId>
+<name>
+<![CDATA[Гидромассажный бассейн IQUE Capri 2100-CDL-BP (WiFi) (212х112х74 см)]]>
+</name>
+<vendor>IQUE</vendor>
+<description>
+<![CDATA[<div data-content-type="html" data-appearance="default" data-element="main">&lt;!-- Графики СПА бассейна --&gt;
+&lt;section class="spa-grafik"&gt;
+	&lt;div class="spa-grafik-in"&gt;
+		&lt;!-- \ --&gt;
+		&lt;div class="spa-grafik-block hvr-grow"&gt;
+			&lt;div class="spa-grafik-block-in"&gt;
+				&lt;div class="sgbi-logo spa-icon-1 wow fadeInDown"&gt;&lt;/div&gt;
+				&lt;div class="sgbi-number wow fadeInRight delay-01"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="sgbi-title wow fadeInUp delay-02"&gt;Человека&lt;/div&gt;
+				&lt;div class="sgbi-text wow fadeInUp delay-03"&gt;Количество мест&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-grafik-block hvr-grow"&gt;
+			&lt;div class="spa-grafik-block-in"&gt;
+				&lt;div class="sgbi-logo spa-icon-2 wow fadeInDown delay-02"&gt;&lt;/div&gt;
+				&lt;div class="sgbi-number wow fadeInRight delay-03"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="sgbi-title wow fadeInUp delay-04"&gt;Лежачих места&lt;/div&gt;
+				&lt;div class="sgbi-text wow fadeInUp delay-05"&gt;Тип мест&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-grafik-block hvr-grow"&gt;
+			&lt;div class="spa-grafik-block-in"&gt;
+				&lt;div class="sgbi-logo spa-icon-3 wow fadeInDown delay-04"&gt;&lt;/div&gt;
+				&lt;div class="sgbi-number wow fadeInRight delay-05"&gt;&lt;span&gt;570&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="sgbi-title wow fadeInUp delay-06"&gt;Литров&lt;/div&gt;
+				&lt;div class="sgbi-text wow fadeInUp delay-07"&gt;Объем чаши бассейна&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-grafik-block hvr-grow"&gt;
+			&lt;div class="spa-grafik-block-in"&gt;
+				&lt;div class="sgbi-logo spa-icon-4 wow fadeInDown delay-06"&gt;&lt;/div&gt;
+				&lt;div class="sgbi-number-mini wow fadeInRight delay-07"&gt;&lt;span&gt;212х112х74 см&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="sgbi-title wow fadeInUp delay-08"&gt;Габариты&lt;/div&gt;
+				&lt;div class="sgbi-text wow fadeInUp delay-09"&gt;Размеры СПА-бассейна&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-grafik-block hvr-grow"&gt;
+			&lt;div class="spa-grafik-block-in"&gt;
+				&lt;div class="sgbi-logo spa-icon-5 wow fadeInDown delay-08"&gt;&lt;/div&gt;
+				&lt;div class="sgbi-number wow fadeInRight delay-09"&gt;&lt;span&gt;31&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="sgbi-title wow fadeInUp delay-10"&gt;Гидрофорсунка&lt;/div&gt;
+				&lt;div class="sgbi-text wow fadeInUp delay-11"&gt;Количество гидромассажных форсунок&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-grafik-block hvr-grow"&gt;
+			&lt;div class="spa-grafik-block-in"&gt;
+				&lt;div class="sgbi-logo spa-icon-6 wow fadeInDown delay-10"&gt;&lt;/div&gt;
+				&lt;div class="sgbi-number wow fadeInRight delay-11"&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="sgbi-title wow fadeInUp delay-12"&gt;Аэрофорсунок&lt;/div&gt;
+				&lt;div class="sgbi-text wow fadeInUp delay-13"&gt;Количество аеромассажных форсунок&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- / --&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+
+&lt;!-- Большая секция СПА --&gt;
+&lt;section class="spa-big"&gt;
+	&lt;div class="spa-big-in"&gt;
+		&lt;div class="spa-big-left spa-capri-1 wow fadeIn"&gt;
+			&lt;div class="spa-big-info wow fadeInUp"&gt;
+				&lt;div class="spa-big-info-logo"&gt;&lt;/div&gt;
+				&lt;div class="spa-big-info-text"&gt;
+					&lt;p&gt;
+Идеальная отделка SPA IQUE. Поверхность ванны является одной из самых важных частей в СПА, так как от её качества зависит общий комфорт пользователя.
+					&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-big-right"&gt;
+			&lt;!-- Загаловок --&gt;
+			&lt;div class="spa-title-1"&gt;
+				&lt;div class="spa-title-1-in wow fadeInRight"&gt;
+					&lt;h2&gt;
+						Акриловая &lt;br&gt;СПА-ванна
+					&lt;/h2&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- // --&gt;
+			&lt;div class="spa-big-text wow fadeInRight"&gt;
+			&lt;p&gt;
+			Гидромассажные СПА-бассейны IQUE представляют собой сочетание комфорта и надежности. Они разработаны профессионалами индустрии с внедрением последних технологий и идеально подходят для семейного использования. Благодаря функционалу и компактности, такие СПА-бассейны позволяют в домашних условиях оборудовать место для качественной релаксации и оздоровления. Они подходят для домов, квартир и уличного размещения. Ванна включает в себя все необходимые модули для работы, включая фильтрацию, дезинфекцию и нагрев воды.
+			&lt;br&gt;&lt;br&gt;
+			При изготовлении СПА IQUE применяют американский акрил Aristech с уникальными свойствами. Он отличается высокой прочностью и технологичностью, что обеспечивает длительный срок службы ванны. Чаша бассейна IQUE обрабатывается в особой печи со специальными регулируемыми температурными зонами, которые в свою очередь специально приспособлены для создания идеальной гладкой поверхности ванны. Для повышения прочности конструкции чаша укрепляется шестью слоями армированного стекловолокном полиэстера. 
+			&lt;br&gt;&lt;br&gt;
+			Использование высококачественного акрила является важным критерием, необходимым для обеспечения гладкой поверхности СПА-ванны без пузырьков или шероховатостей.
+			&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;div style="clear:both"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+
+&lt;!-- Система управления --&gt;
+&lt;section class="spa-system"&gt;
+	&lt;div class="spa-system-in"&gt;
+		&lt;!-- Загаловок --&gt;
+		&lt;div class="spa-title-1"&gt;
+			&lt;div class="spa-title-1-in wow fadeInRight"&gt;
+				&lt;h2&gt;
+					Специальная &lt;br&gt;конструкция
+				&lt;/h2&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+		&lt;!-- Наполнение --&gt;
+		&lt;div class="spa-system-all"&gt;
+			&lt;div class="spa-system-left-mini wow fadeInDown delay-01"&gt;
+				&lt;p&gt;
+				Одним из основных составляющих элементов СПА-терапии является температурное воздействие на кожу человека. В ваннах IQUE внедрена технология изготовления корпуса “Triple Thermal Shield”. Конструкция включает в себя слои сохраняющие тепло и отводящие холодный воздух. 
+                        &lt;br&gt;&lt;br&gt;
+                        Нижний, внутренний и верхний термальные барьеры гарантируют максимальную изоляцию тепла. Это позволяет эффективно расходовать электроэнергию, обеспечивая при этом быстрый подогрев воды. Гидромассажные ванны IQUE относятся к классу энергосберегающих.
+				&lt;/p&gt;
+			&lt;div style="clear:both"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="spa-system-right-mini wow fadeInUp delay-02"&gt;
+			&lt;/div&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+	&lt;div style="clear:both"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+
+
+&lt;!-- Большая секция СПА --&gt;
+&lt;section class="spa-big"&gt;
+	&lt;div class="spa-big-in"&gt;
+		&lt;div class="spa-big-left spa-capri-2 wow fadeIn"&gt;
+			&lt;div class="spa-big-info wow fadeInUp"&gt;
+				&lt;div class="spa-big-info-logo"&gt;&lt;/div&gt;
+				&lt;div class="spa-big-info-text"&gt;
+					&lt;p&gt;
+Уникальная комбинация различных форсунок оказывает положительное влияние на тело – 20 минут терапии ежедневно позволит справиться с головной болью, бессонницей, головокружением и хронической усталостью.
+					&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="spa-big-right"&gt;
+			&lt;!-- Загаловок --&gt;
+			&lt;div class="spa-title-1"&gt;
+				&lt;div class="spa-title-1-in wow fadeInRight"&gt;
+					&lt;h2&gt;
+						Массажные &lt;br&gt;форсунки
+					&lt;/h2&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- // --&gt;
+			&lt;div class="spa-big-text wow fadeInRight"&gt;
+			&lt;p&gt;
+Главной задачей SPA-ванн является массажная терапия. Бассейны IQUE оснащены гидро- и аэромассажными форсунками из высококачественной нержавеющей стали. Их расположение в нужной последовательности позволяет достичь предельного эффекта положительного воздействия на все важные точки человеческого тела. 
+&lt;br&gt;&lt;br&gt;
+В чаше используются гидрофорсунки Power Flex различного типа – направленного действия, с вращением, для точечного, пульсирующего, глубокого массажа. Аэромассажные форсунки воздействуют на кожный покров микроскопическими пузырьками воздуха – это стимулирует кровообращение, способствует очищению кожи и ее насыщению чистым кислородом. Направленное действие воздушных и водяных теплых потоков одновременно тонизирует и расслабляет мышцы.
+			&lt;br&gt;&lt;br&gt;
+Особый способ крепления форсунок в ваннах ИКЬЮ обеспечивает увеличение срока их службы.
+			&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;div style="clear:both"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+
+
+&lt;!-- Система управления --&gt;
+&lt;section class="spa-system"&gt;
+	&lt;div class="spa-system-in"&gt;
+		&lt;!-- Загаловок --&gt;
+		&lt;div class="spa-title-1"&gt;
+			&lt;div class="spa-title-1-in wow fadeInRight"&gt;
+				&lt;h2&gt;
+					Система управления &lt;br&gt;и возможности
+				&lt;/h2&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+		&lt;!-- Наполнение --&gt;
+		&lt;div class="spa-system-all"&gt;
+			&lt;div class="spa-system-left wow fadeInDown"&gt;
+				&lt;p&gt;
+IQUE СПА оснащены системой управления американской компании Balboa Systems. Компания является одним из ведущих производителей электронных технологий для бассейнов, СПА и джакузи. Цифровая панель Balboa с ЖК-экраном имеет множество функций и позволяет управлять работой бассейна как в ручном режиме, так и дистанционно (посредством смартфона, планшета, ноутбука). Функционал системы зависит напрямую от модели СПА.
+				&lt;br&gt;&lt;br&gt;
+Чаша ванны IQUE Capri вмещает до 2 человек одновременно. Пользователю доступны функции озонирования, подогрев, водопады с иллюминацией, светодиодная подсветка воды, аромотерапия. IQUE Capri имеет встроенный Wi-Fi модуль для управления посредством цифровых устройств. Представленная модель гидромассажного бассейна является идеальным решением для самостоятельного или парного отдыха. Она подойдет не только для дома, но и для квартиры.
+				&lt;/p&gt;
+			&lt;div style="clear:both"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+	&lt;div style="clear:both"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+
+&lt;!-- LED Подсветка --&gt;
+&lt;section class="spa-led"&gt;
+	&lt;div class="spa-led-in"&gt;
+		&lt;!-- Загаловок --&gt;
+		&lt;div class="spa-title-mini"&gt;
+			&lt;div class="spa-title-mini-in wow fadeInRight"&gt;
+				&lt;h2&gt;
+					LED-подсветка воды в гидромассажном бассейне IQUE Capri
+				&lt;/h2&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+		&lt;!-- Наполнение --&gt;
+		&lt;div class="spa-led-all"&gt;
+			&lt;div class="spa-led-1 wow fadeInUp delay-01"&gt;&lt;/div&gt;
+			&lt;div class="spa-led-2 wow fadeInUp delay-02"&gt;&lt;/div&gt;
+			&lt;div class="spa-led-3 wow fadeInUp delay-03"&gt;&lt;/div&gt;
+			&lt;div class="spa-led-4 wow fadeInUp delay-04"&gt;&lt;/div&gt;
+			&lt;div class="spa-led-5 wow fadeInUp delay-05"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+
+&lt;!-- Шведское качество --&gt;
+&lt;section class="spa-shweden"&gt;
+	&lt;div class="spa-shweden-in"&gt;
+		&lt;!-- Загаловок --&gt;
+		&lt;div class="spa-title-1"&gt;
+			&lt;div class="spa-title-1-in wow fadeInRight"&gt;
+				&lt;h2&gt;
+					Шведское &lt;br&gt;качество
+				&lt;/h2&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+		&lt;!-- Наполнение --&gt;
+		&lt;div class="spa-shweden-all wow fadeIn"&gt;
+			&lt;div class="spa-shweden-first wow fadeInDown"&gt;
+				&lt;p&gt;
+				Выбирая СПА-бассейн IQUE, пользователи могут быть уверены в качестве и надежности продукции. Аббревиатура IQUE означает – “Создано инновационным, качественным, уникальным и энергоэффективым путем” (Innovation-Quality-Unique-Energy Efficient Manufactured).
+				&lt;br&gt;&lt;br&gt;
+				Штаб-квартира компании IQUE SWEDEN AB находится в шведском городе Хельсингборг. Качество выпускаемой продукции обеспечивается 20-летним опытом создания СПА-бассейнов и джакузи различного типа. Компания ответственна за разработку уникальных технологий “Acu Flex Zone”, “MicroSilk – Health and Beauty”, “Triple Thermal Shield”.
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="spa-shweden-second"&gt;
+				&lt;div class="spa-shweden-second-logo wow fadeInLeft"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- // --&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /// --&gt;
+			
+			
+			
+			
+			&lt;div style="clear:both"&gt;&lt;/div&gt;
+	
+	
+	
+	
+  
+		
+&lt;style&gt;
+/* Загаловок на всю ширину */.spa-title-1{width:100%;height:85px;}  .spa-title-1-in{width:100px;height:60px;border-bottom:3px solid #359ffb;}.spa-title-1-in h2{font:25px arial;line-height:24px;color:#359ffb;width:600px;text-transform:uppercase;font-weight:bold;margin:0;}/* Загаловок маленький */.spa-title-mini{width:100%;height:auto;}  .spa-title-mini-in{width:95%;height:auto;max-width:1160px;margin:auto;padding-bottom:5px;background:white;}.spa-title-mini-in h2{font:18px arial;line-height:37px;color:#359ffb;text-transform:uppercase;font-weight:bold;margin:0;}/* Графики СПА бассейна */.spa-grafik{width:100%;height:200px;margin:30px 0px;}.spa-grafik-in{width:100%;height:200px;margin:auto;}/**/.spa-grafik-block{width:16.666%;min-width:157px;height:200px;float:left;}.spa-grafik-block-in{width:157px;height:200px;margin:auto;}.sgbi-logo{width:157px;height:100px;}.sgbi-number,.sgbi-number-mini{height:40px;}.sgbi-number span{font:30px arial;font-weight:bold;color:#fff;padding:2px 25px 2px 10px;border-radius:3px;background:#359ffb;}.sgbi-number-mini span{font:19px arial;font-weight:bold;color:#fff;padding:8px 5px 8px 5px;border-radius:3px;background:#359ffb;position:relative;top:6px;}.sgbi-title{font:16px arial;font-weight:bold;line-height:1em;}.sgbi-text{font:12px arial;line-height:1em;padding-top:5px;}/**/.spa-icon-1{background:url(https://aquapolis.ru/media/custom_css/Images/spa-icon-1.png) left center no-repeat;}.spa-icon-2{background:url(https://aquapolis.ru/media/custom_css/Images/spa-icon-2.png) left center no-repeat;}.spa-icon-3{background:url(https://aquapolis.ru/media/custom_css/Images/spa-icon-3.png) left center no-repeat;}.spa-icon-4{background:url(https://aquapolis.ru/media/custom_css/Images/spa-icon-4.png) left center no-repeat;}.spa-icon-5{background:url(https://aquapolis.ru/media/custom_css/Images/spa-icon-5.png) left center no-repeat;}.spa-icon-6{background:url(https://aquapolis.ru/media/custom_css/Images/spa-icon-6.png) left center no-repeat;}/**/.delay-01{animation-delay:0.1s;-webkit-animation-delay:0.1s;-moz-animation-delay:0.1s;-o-animation-delay:0.1s;}.delay-02{animation-delay:0.2s;-webkit-animation-delay:0.2s;-moz-animation-delay:0.2s;-o-animation-delay:0.2s;}.delay-03{animation-delay:0.3s;-webkit-animation-delay:0.3s;-moz-animation-delay:0.3s;-o-animation-delay:0.3s;}.delay-04{animation-delay:0.4s;-webkit-animation-delay:0.4s;-moz-animation-delay:0.4s;-o-animation-delay:0.4s;}.delay-05{animation-delay:0.5s;-webkit-animation-delay:0.5s;-moz-animation-delay:0.5s;-o-animation-delay:0.5s;}.delay-06{animation-delay:0.6s;-webkit-animation-delay:0.6s;-moz-animation-delay:0.6s;-o-animation-delay:0.6s;}.delay-07{animation-delay:0.7s;-webkit-animation-delay:0.7s;-moz-animation-delay:0.7s;-o-animation-delay:0.7s;}.delay-08{animation-delay:0.8s;-webkit-animation-delay:0.8s;-moz-animation-delay:0.8s;-o-animation-delay:0.8s;}.delay-09{animation-delay:0.9s;-webkit-animation-delay:0.9s;-moz-animation-delay:0.9s;-o-animation-delay:0.9s;}.delay-10{animation-delay:1.0s;-webkit-animation-delay:1.0s;-moz-animation-delay:1.0s;-o-animation-delay:1.0s;}.delay-11{animation-delay:1.1s;-webkit-animation-delay:1.1s;-moz-animation-delay:1.1s;-o-animation-delay:1.1s;}.delay-12{animation-delay:1.2s;-webkit-animation-delay:1.2s;-moz-animation-delay:1.2s;-o-animation-delay:1.2s;}.delay-13{animation-delay:1.3s;-webkit-animation-delay:1.3s;-moz-animation-delay:1.3s;-o-animation-delay:1.3s;}.delay-14{animation-delay:1.4s;-webkit-animation-delay:1.4s;-moz-animation-delay:1.4s;-o-animation-delay:1.4s;}.delay-15{animation-delay:1.5s;-webkit-animation-delay:1.5s;-moz-animation-delay:1.5s;-o-animation-delay:1.5s;}/* SPA большая секция */.spa-big{width:100%;height:auto;margin:30px 0px;}.spa-big-in{width:100%;height:auto;margin:auto;}/**/.spa-big-left{width:50%;height:430px;float:left;border-radius:10px;}.spa-big-info{width:80%;max-width:450px;height:120px;background:#fff;margin:auto;border-top:5px solid #f6b933;position:relative;top:305px;}.spa-big-info-logo{width:90px;height:120px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-big-info-logo.png)left center no-repeat;float:left;}.spa-big-info-text{width:calc(100% - 90px);height:120px;float:right;display:table;}.spa-big-info-text p{font:12px arial;font-weight:bold;padding-right:20px;vertical-align:middle;display:table-cell;}.spa-big-right{width:calc(50% - 100px);height:auto;float:right;padding:0px 50px;}.spa-big-text{font:12px arial;line-height:17px;text-align:justify;}/**/.spa-capri-1{background:url(https://aquapolis.ru/media/custom_css/Images/spa-capri-1.png)#dbdbdb center bottom no-repeat;background-size:cover;}.spa-capri-2{background:url(https://aquapolis.ru/media/custom_css/Images/spa-capri-2.png)#dbdbdb center bottom no-repeat;background-size:cover;}/* Конструкци (основа с системы упарвления) */.spa-system-left-mini{width:calc(100% - 300px);height:auto;float:left;border-radius:10px;}.spa-system-left-mini p{font:12px arial;line-height:17px;height:auto;padding:35px 50px 35px 50px;text-align:justify;}.spa-system-right-mini{width:300px;height:300px;float:left;border-radius:10px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-construction.png) right top no-repeat;margin-top:-120px;}/* Система Управления */.spa-system{width:100%;height:auto;margin:30px 0px;}.spa-system-in{width:90%;max-width:1160px;height:auto;margin:auto;}/**/.spa-system-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-system-left{width:100%;height:auto;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-system.png) right top no-repeat;border-radius:10px;}.spa-system-left p{font:12px arial;line-height:17px;height:auto;padding:35px 400px 35px 50px;text-align:justify;}/* LED Подсветка */.spa-led{width:100%;height:auto;margin:30px 0px;}.spa-led-in{width:95%;height:auto;margin:auto;}/**/.spa-led-all{height:160px;width:100%;}/**/.spa-led-1{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-1.png) center no-repeat;background-size:cover;}.spa-led-2{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-2.png) center no-repeat;background-size:cover;}.spa-led-3{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-3.png) center no-repeat;background-size:cover;}.spa-led-4{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-4.png) center no-repeat;background-size:cover;}.spa-led-5{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-5.png) center no-repeat;background-size:cover;}/* Шведское качество */.spa-shweden{width:100%;height:400px;margin:30px 0px;}.spa-shweden-in{width:90%;max-width:1160px;height:400px;margin:auto;}/**/.spa-shweden-all{height:275px;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-shweden-first{width:100%;max-width:1160px;height:275px;position:absolute;}.spa-shweden-first p{font:12px arial;line-height:17px;width:400px;height:auto;margin:35px 0 25px 320px;text-align:justify;}.spa-shweden-second{width:87%;max-width:1160px;height:275px;position:absolute;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-fon.png) center right no-repeat;}.spa-shweden-second-logo{width:300px;height:275px;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-logo.png) center left no-repeat;}/*in941px*/@media screen and (min-width:100px) and (max-width:1279px) {/* Загаловок на всю ширину */.spa-title-1{width:100%;height:85px;}  .spa-title-1-in{width:100px;height:60px;border-bottom:3px solid #359ffb;}.spa-title-1-in h2{font:25px arial;line-height:24px;color:#359ffb;width:600px;text-transform:uppercase;font-weight:bold;margin:0;}/* Загаловок маленький */.spa-title-mini{width:100%;height:auto;}  .spa-title-mini-in{width:95%;height:auto;max-width:1160px;margin:auto;padding-bottom:5px;background:white;}.spa-title-mini-in h2{font:18px arial;line-height:37px;color:#359ffb;text-transform:uppercase;font-weight:bold;margin:0;}/* Графики СПА бассейна */.spa-grafik{width:100%;height:400px;margin:30px 0px;}.spa-grafik-in{width:100%;height:400px;margin:auto;}/**/.spa-grafik-block{width:33.333%;min-width:157px;height:200px;float:left;}.spa-grafik-block-in{width:157px;height:200px;margin:auto;}.sgbi-logo{width:157px;height:100px;}.sgbi-number,.sgbi-number-mini{height:40px;}.sgbi-number span{font:30px arial;font-weight:bold;color:#fff;padding:2px 25px 2px 10px;border-radius:3px;background:#359ffb;}.sgbi-number-mini span{font:19px arial;font-weight:bold;color:#fff;padding:8px 5px 8px 5px;border-radius:3px;background:#359ffb;position:relative;top:6px;}.sgbi-title{font:16px arial;font-weight:bold;line-height:1em;}.sgbi-text{font:12px arial;line-height:1em;padding-top:5px;}/* SPA большая секция */.spa-big{width:100%;height:auto;margin:30px 0px;}.spa-big-in{width:100%;height:auto;margin:auto;}/**/.spa-big-left{width:50%;height:430px;float:left;border-radius:10px;}.spa-big-info{width:80%;max-width:450px;height:120px;background:#fff;margin:auto;border-top:5px solid #f6b933;position:relative;top:305px;}.spa-big-info-logo{width:90px;height:120px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-big-info-logo.png)left center no-repeat;float:left;}.spa-big-info-text{width:calc(100% - 90px);height:120px;float:right;display:table;}.spa-big-info-text p{font:12px arial;font-weight:bold;padding-right:20px;vertical-align:middle;display:table-cell;}.spa-big-right{width:calc(50% - 50px);height:auto;float:right;padding:0px 0px 0px 50px;}.spa-big-text{font:12px arial;line-height:17px;text-align:justify;}/* Конструкци (основа с системы упарвления) */.spa-system-left-mini{width:calc(100% - 300px);height:auto;float:left;border-radius:10px;}.spa-system-left-mini p{font:12px arial;line-height:17px;height:auto;padding:35px 50px 35px 50px;text-align:justify;}.spa-system-right-mini{width:300px;height:300px;float:left;border-radius:10px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-construction.png) right top no-repeat;margin-top:-110px;}/* Система Управления */.spa-system{width:100%;height:auto;margin:30px 0px;}.spa-system-in{width:90%;max-width:1160px;height:auto;margin:auto;}/**/.spa-system-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-system-left{width:100%;height:auto;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-system.png) right top no-repeat;border-radius:10px;}.spa-system-left p{font:12px arial;line-height:17px;height:auto;padding:35px 400px 35px 50px;text-align:justify;}/* LED Подсветка */.spa-led{width:100%;height:auto;margin:30px 0px;}.spa-led-in{width:95%;height:auto;margin:auto;}/**/.spa-led-all{height:160px;width:100%;}/**/.spa-led-1{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-1.png) center no-repeat;background-size:cover;}.spa-led-2{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-2.png) center no-repeat;background-size:cover;}.spa-led-3{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-3.png) center no-repeat;background-size:cover;}.spa-led-4{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-4.png) center no-repeat;background-size:cover;}.spa-led-5{height:150px;width:calc(20% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-5.png) center no-repeat;background-size:cover;}/* Шведское качество */.spa-shweden{width:100%;height:auto;margin:30px 0px;}.spa-shweden-in{width:90%;max-width:1160px;height:auto;margin:auto;}/**/.spa-shweden-all{height:275px;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-shweden-first{width:100%;max-width:1160px;height:275px;position:absolute;z-index:999;}.spa-shweden-first p{font:12px arial;line-height:17px;width:400px;height:auto;margin:0px 10% 0px 25%;padding:35px 0px 35px 0px;text-align:justify;}.spa-shweden-second{width:0%;max-width:1160px;height:275px;position:absolute;border-radius:0px 0px 10px 10px;border-top:0px solid #ebebeb;background:none;}.spa-shweden-second-logo{width:300px;height:275px;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-logo.png) -20px center no-repeat;}}/*in560px*/@media screen and (min-width:100px) and (max-width:960px) {/* Загаловок на всю ширину */.spa-title-1{width:100%;height:80px;}  .spa-title-1-in{width:100px;height:60px;border-bottom:3px solid #359ffb;}.spa-title-1-in h2{font:25px arial;line-height:24px;color:#359ffb;width:450px;text-transform:uppercase;font-weight:bold;margin:0;}  /* Загаловок маленький */.spa-title-mini{width:100%;height:auto;}  .spa-title-mini-in{width:400px;height:auto;max-width:1160px;margin:auto 0;padding-bottom:5px;background:white;}.spa-title-mini-in h2{font:16px arial;line-height:17px;color:#359ffb;text-transform:uppercase;font-weight:bold;margin:0;}  /* Графики СПА бассейна */.spa-grafik{width:100%;height:400px;margin:30px 0px;}.spa-grafik-in{width:100%;height:400px;margin:auto;}/**/.spa-grafik-block{width:33.333%;min-width:157px;height:200px;float:left;}.spa-grafik-block-in{width:157px;height:200px;margin:auto;}.sgbi-logo{width:157px;height:100px;}.sgbi-number,.sgbi-number-mini{height:40px;}.sgbi-number span{font:30px arial;font-weight:bold;color:#fff;padding:2px 25px 2px 10px;border-radius:3px;background:#359ffb;}.sgbi-number-mini span{font:19px arial;font-weight:bold;color:#fff;padding:8px 5px 8px 5px;border-radius:3px;background:#359ffb;position:relative;top:6px;}.sgbi-title{font:16px arial;font-weight:bold;line-height:1em;}.sgbi-text{font:12px arial;line-height:1em;padding-top:5px;}/* SPA большая секция */.spa-big{width:100%;height:auto;margin:30px 0px;}.spa-big-in{width:100%;height:auto;margin:auto;}/**/.spa-big-left{width:90%;height:325px;float:none;margin:auto;border-radius:10px;}.spa-big-info{width:80%;max-width:450px;height:120px;background:#fff;margin:auto;border-top:5px solid #f6b933;position:relative;top:200px;}.spa-big-info-logo{width:90px;height:120px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-big-info-logo.png)left center no-repeat;float:left;}.spa-big-info-text{width:calc(100% - 90px);height:120px;float:right;display:table;}.spa-big-info-text p{font:12px arial;font-weight:bold;padding-right:20px;vertical-align:middle;display:table-cell;}.spa-big-right{width:calc(90% - 0px);height:auto;float:none;margin:auto;padding:20px 0px;}.spa-big-text{font:12px arial;line-height:17px;text-align:justify;}/* Конструкци (основа с системы упарвления) */.spa-system-left-mini{width:calc(100% - 250px);height:auto;float:left;border-radius:10px;}.spa-system-left-mini p{font:12px arial;line-height:17px;height:auto;padding:35px 50px 35px 50px;text-align:justify;}.spa-system-right-mini{width:250px;height:250px;float:left;border-radius:10px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-construction.png) right top no-repeat;background-size:100%;margin-top:-40px;}/* Система Управления */.spa-system{width:100%;height:auto;margin:30px 0px;}.spa-system-in{width:90%;max-width:1160px;height:auto;margin:auto;}/**/.spa-system-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-system-left{width:100%;height:auto;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-system.png) right top no-repeat;border-radius:10px;}.spa-system-left p{font:12px arial;line-height:17px;height:auto;padding:35px 350px 35px 50px;text-align:justify;}/* LED Подсветка */.spa-led{width:100%;height:auto;margin:30px 0px;}.spa-led-in{width:90%;height:auto;margin:auto;}/**/.spa-led-all{height:320px;width:100%;}/**/.spa-led-1{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-1.png) center no-repeat;background-size:cover;}.spa-led-2{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-2.png) center no-repeat;background-size:cover;}.spa-led-3{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-3.png) center no-repeat;background-size:cover;}.spa-led-4{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-4.png) center no-repeat;background-size:cover;}.spa-led-5{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-5.png) center no-repeat;background-size:cover;}/* Шведское качество */.spa-shweden{width:100%;height:auto;margin:30px 0px;}.spa-shweden-in{width:90%;max-width:1160px;height:auto;margin:auto;}/**/.spa-shweden-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-shweden-first{width:100%;max-width:1160px;height:auto;position:relative;}.spa-shweden-first p{font:12px arial;line-height:17px;width:80%;height:auto;margin:0px 10%;padding:45px 0px 35px 0px;text-align:justify;}.spa-shweden-second{width:100%;max-width:1160px;height:275px;position:relative;border-radius:0px 0px 10px 10px;border-top:1px solid #ebebeb;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-fon.png) right center no-repeat;}.spa-shweden-second-logo{width:300px;height:275px;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-logo.png) left center no-repeat;}}/*in560px*/@media screen and (min-width:100px) and (max-width:767px) {/* Загаловок на всю ширину */.spa-title-1{width:100%;height:85px;}  .spa-title-1-in{width:100px;height:60px;border-bottom:3px solid #359ffb;}.spa-title-1-in h2{font:25px arial;line-height:24px;color:#359ffb;width:450px;text-transform:uppercase;font-weight:bold;margin:0;}/* Загаловок маленький */.spa-title-mini{width:100%;height:auto;}  .spa-title-mini-in{width:400px;height:auto;max-width:1160px;margin:auto 0;padding-bottom:5px;background:white;}.spa-title-mini-in h2{font:16px arial;line-height:17px;color:#359ffb;text-transform:uppercase;font-weight:bold;margin:0;}/* Графики СПА бассейна */.spa-grafik{width:100%;height:400px;margin:30px 0px;}.spa-grafik-in{width:100%;height:400px;margin:auto;}/**/.spa-grafik-block{width:33.333%;min-width:157px;height:200px;float:left;}.spa-grafik-block-in{width:157px;height:200px;margin:auto;}.sgbi-logo{width:157px;height:100px;}.sgbi-number,.sgbi-number-mini{height:40px;}.sgbi-number span{font:30px arial;font-weight:bold;color:#fff;padding:2px 25px 2px 10px;border-radius:3px;background:#359ffb;}.sgbi-number-mini span{font:19px arial;font-weight:bold;color:#fff;padding:8px 5px 8px 5px;border-radius:3px;background:#359ffb;position:relative;top:6px;}.sgbi-title{font:16px arial;font-weight:bold;line-height:1em;}.sgbi-text{font:12px arial;line-height:1em;padding-top:5px;}/* SPA большая секция */.spa-big{width:100%;height:auto;margin:30px 0px;}.spa-big-in{width:100%;height:auto;margin:auto;}/**/.spa-big-left{width:100%;height:325px;float:none;margin:auto;border-radius:10px;}.spa-big-info{width:80%;max-width:450px;height:120px;background:#fff;margin:auto;border-top:5px solid #f6b933;position:relative;top:200px;}.spa-big-info-logo{width:90px;height:120px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-big-info-logo.png)left center no-repeat;float:left;}.spa-big-info-text{width:calc(100% - 90px);height:120px;float:right;display:table;}.spa-big-info-text p{font:12px arial;font-weight:bold;padding-right:20px;vertical-align:middle;display:table-cell;}.spa-big-right{width:calc(100% - 0px);height:auto;float:none;margin:auto;padding:20px 0px;}.spa-big-text{font:12px arial;line-height:17px;text-align:justify;}/* Конструкци (основа с системы упарвления) */.spa-system-left-mini{width:calc(100% - 200px);height:auto;float:left;border-radius:10px;}.spa-system-left-mini p{font:12px arial;line-height:17px;height:auto;padding:25px 0px 35px 10%;text-align:justify;}.spa-system-right-mini{width:200px;height:200px;float:left;border-radius:10px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-construction.png) right top no-repeat;background-size:100%;margin-top:20px;}/* Система Управления */.spa-system{width:100%;height:auto;margin:30px 0px;}.spa-system-in{width:100%;max-width:1160px;height:auto;margin:auto;}/**/.spa-system-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-system-left{width:100%;height:auto;float:left;background:right bottom no-repeat;border-radius:10px;}.spa-system-left p{font:12px arial;line-height:17px;height:auto;padding:25px 5% 35px 5%;text-align:justify;}/* LED Подсветка */.spa-led{width:100%;height:auto;margin:30px 0px;}.spa-led-in{width:90%;height:auto;margin:auto;}/**/.spa-led-all{height:320px;width:100%;}/**/.spa-led-1{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-1.png) center no-repeat;background-size:cover;}.spa-led-2{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-2.png) center no-repeat;background-size:cover;}.spa-led-3{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-3.png) center no-repeat;background-size:cover;}.spa-led-4{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-4.png) center no-repeat;background-size:cover;}.spa-led-5{height:150px;width:calc(33% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-5.png) center no-repeat;background-size:cover;}/* Шведское качество */.spa-shweden{width:100%;height:auto;margin:30px 0px;}.spa-shweden-in{width:90%;max-width:1160px;height:auto;margin:auto;}/**/.spa-shweden-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-shweden-first{width:100%;max-width:1160px;height:auto;position:relative;}.spa-shweden-first p{font:12px arial;line-height:17px;width:90%;height:auto;margin:0px 5%;padding:25px 0px 35px 0px;text-align:justify;}.spa-shweden-second{width:100%;max-width:1160px;height:275px;position:relative;border-radius:0px 0px 10px 10px;border-top:1px solid #ebebeb;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-fon.png) 200px center no-repeat;}.spa-shweden-second-logo{width:300px;height:275px;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-logo.png) -20px center no-repeat;}}/*in80%*/@media screen and (min-width:100px) and (max-width:510px) {/* Загаловок на всю ширину */.spa-title-1{width:100%;height:auto;padding-bottom:20px;}  .spa-title-1-in{width:100px;height:auto;border-bottom:3px solid #359ffb;padding-bottom:10px;}.spa-title-1-in h2{font:20px arial;line-height:20px;color:#359ffb;width:300px;text-transform:uppercase;font-weight:bold;margin:0;}/* Загаловок маленький */.spa-title-mini{width:100%;height:auto;}  .spa-title-mini-in{width:250px;height:auto;max-width:1160px;margin:auto 0;padding-bottom:5px;background:white;}.spa-title-mini-in h2{font:16px arial;line-height:17px;color:#359ffb;text-transform:uppercase;font-weight:bold;margin:0;}/* Графики СПА бассейна */.spa-grafik{width:100%;height:600px;margin:30px 0px;}.spa-grafik-in{width:100%;height:600px;margin:auto;}/**/.spa-grafik-block{width:50%;min-width:157px;height:200px;float:left;}.spa-grafik-block-in{width:157px;height:200px;margin:auto;}.sgbi-logo{width:157px;height:100px;}.sgbi-number,.sgbi-number-mini{height:40px;}.sgbi-number span{font:30px arial;font-weight:bold;color:#fff;padding:2px 25px 2px 10px;border-radius:3px;background:#359ffb;}.sgbi-number-mini span{font:19px arial;font-weight:bold;color:#fff;padding:8px 5px 8px 5px;border-radius:3px;background:#359ffb;position:relative;top:6px;}.sgbi-title{font:16px arial;font-weight:bold;line-height:1em;}.sgbi-text{font:12px arial;line-height:1em;padding-top:5px;}/* SPA большая секция */.spa-big{width:100%;height:auto;margin:30px 0px;}.spa-big-in{width:100%;height:auto;margin:auto;}/**/.spa-big-left{width:100%;height:325px;float:none;margin:auto;border-radius:10px;}.spa-big-info{width:90%;max-width:450px;height:120px;background:#fff;margin:auto;border-top:5px solid #f6b933;position:relative;top:200px;}.spa-big-info-logo{width:90px;height:120px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-big-info-logo.png)left center no-repeat;float:left;}.spa-big-info-text{width:calc(100% - 90px);height:120px;float:right;display:table;}.spa-big-info-text p{font:12px arial;font-weight:bold;padding-right:20px;vertical-align:middle;display:table-cell;}.spa-big-right{width:calc(90% - 0px);height:auto;float:none;margin:auto;padding:20px 0px;}.spa-big-text{font:12px arial;line-height:17px;text-align:justify;}/* Конструкци (основа с системы упарвления) */.spa-system-left-mini{width:calc(100% - 0px);height:auto;float:none;margin:auto;border-radius:10px;}.spa-system-left-mini p{font:12px arial;line-height:17px;height:auto;padding:15px 5% 15px 5%;text-align:justify;}.spa-system-right-mini{width:300px;height:300px;float:none;margin:auto;border-radius:10px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-construction.png) right top no-repeat;background-size:100%;margin-top:20px;}/* Система Управления */.spa-system{width:100%;height:auto;margin:30px 0px;}.spa-system-in{width:100%;max-width:1160px;height:auto;margin:auto;}/**/.spa-system-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-system-left{width:100%;height:auto;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-system.png) right bottom no-repeat;border-radius:10px;}.spa-system-left p{font:12px arial;line-height:17px;height:auto;padding:15px 5% 280px 5%;text-align:justify;}/* LED Подсветка */.spa-led{width:100%;height:auto;margin:30px 0px;}.spa-led-in{width:100%;height:auto;margin:auto;}/**/.spa-led-all{height:480px;width:100%;}/**/.spa-led-1{height:150px;width:calc(50% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-1.png) center no-repeat;background-size:cover;}.spa-led-2{height:150px;width:calc(50% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-2.png) center no-repeat;background-size:cover;}.spa-led-3{height:150px;width:calc(50% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-3.png) center no-repeat;background-size:cover;}.spa-led-4{height:150px;width:calc(50% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-4.png) center no-repeat;background-size:cover;}.spa-led-5{height:150px;width:calc(50% - 10px);margin:5px;float:left;border-radius:5px;background:url(https://aquapolis.ru/media/custom_css/Images/spa-led-5.png) center no-repeat;background-size:cover;}/* Шведское качество */.spa-shweden{width:100%;height:auto;margin:30px 0px;}.spa-shweden-in{width:100%;max-width:1160px;height:auto;margin:auto;}/**/.spa-shweden-all{height:auto;width:100%;background:linear-gradient(to right, #ebebeb, #d7d7d7);border-radius:10px;}.spa-shweden-first{width:100%;max-width:1160px;height:auto;position:relative;}.spa-shweden-first p{font:12px arial;line-height:17px;width:90%;height:auto;margin:0px 5% 25px 5%;padding:25px 0px 10px 0px;text-align:justify;}.spa-shweden-second{width:100%;max-width:1160px;height:275px;position:relative;border-radius:0px 0px 10px 10px;border-top:1px solid #ebebeb;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-fon.png) 140px center no-repeat;}.spa-shweden-second-logo{width:300px;height:275px;float:left;background:url(https://aquapolis.ru/media/custom_css/Images/spa-shweden-logo.png) -25px center no-repeat;}}
+&lt;/style&gt;</div>]]>
+</description>
+<picture>https://aquapolis.ru/media/catalog/product/cache/518ea04b426cd8acb1c8c3fb9af21e95/g/i/gidromassazhnyj_bassejn_ique_capri_2100-cdl-bp_1.jpg</picture>
+<currencyId>RUR</currencyId>
+<store>false</store>
+<delivery>false</delivery>
+<pickup>false</pickup>
+</offer>
+</offers>
+</shop>
+</yml_catalog>

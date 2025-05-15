@@ -1,0 +1,295 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+<main class="cart">
+    <div class="container">
+        <div class="cart__caption">
+            <p>Корзина</p>
+            <h1>Ваш заказ</h1>
+        </div>
+        {# --- Affichage des messages Django (par exemple, succès/erreur après redirection) --- #}
+        {% if messages %}
+            <div class="django-messages" style="margin-bottom: 20px;">
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% else %}info{% endif %}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {# --- Zone Panier Vide --- #}
+        <div id="cart-empty-message" {% if not cart %}style="display: block;"{% else %}style="display: none;"{% endif %} class="cart-empty">
+            <span class="empty-message">Ваша корзина пуста.</span> <br> 
+            <a href="{% url 'menu:index' %}">Продолжить покупки</a>
+        </div>
+
+        {# --- Formulaire Principal Englobant Tout --- #}
+        <form action="{% url 'checkout:checkout_page' %}" method="post" class="order-form" id="checkout-form" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {# --- Conteneur Principal Panier/Formulaire --- #}
+            <div id="cart-content-container"
+                {% if cart %}style="display: block;"{% else %}style="display: none;"{% endif %} {# Affiche si panier existe #}
+                data-update-shipping-url="{% url 'checkout:update_shipping_session' %}"
+                >
+                <div class="cart__wrapper">
+
+                    {# --- Colonne Gauche : Panier et Infos Client --- #}
+                    <div class="cart__order">
+                        <div class="container-basket">
+                            <div class="cart__products">
+                                <table class="cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">Изображение</th>
+                                            <th class="product-name">Товар</th>
+                                            <th class="product-quantity">Количество</th>
+                                            <th class="product-subtotal">Итого</th>
+                                            <th class="product-remove">Удалить</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cart-table-body"> {# ID Important pour JS #}
+                                        {% for item in cart %}
+                                        <tr class="cart-item" data-product-id="{{ item.product.id }}">
+                                            <td class="product-thumbnail">
+                                                <a href="{{ item.product.get_absolute_url }}">
+                                                    {% if item.product.image %}
+                                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}">
+                                                    {% else %}
+                                                        <img src="{% static 'images/default_image.webp' %}" alt="Default">
+                                                    {% endif %}                                                </a>
+                                            </td>
+                                            <td class="product-name" data-title="Товар">
+                                                <a href="{{ item.product.get_absolute_url }}">{{ item.product.title }}</a>
+                                                <small style="display: block; color: #888;">Артикул: {{ item.product.sku }}</small>
+                                            </td>
+                                            <td class="product-quantity" data-title="Количество">
+                                                <div class="amount" data-product-id="{{ item.product.id }}">
+                                                    <div class="amount-controls left quantity-minus" role="button" aria-label="Уменьшить количество">
+                                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="1" fill="#FFFFFF"></rect></svg>
+                                                    </div>
+                                                    <input class="amount-input quantity-input"
+                                                        type="number"
+                                                        value="{{ item.quantity }}"
+                                                        min="1" {# Ajoute 0 pour permettre suppression via input #}
+                                                        max="1000"
+                                                        step="1"
+                                                        aria-label="Количество товара {{ item.product.title }}"
+                                                        data-product-id="{{ item.product.id }}"
+                                                        data-update-url="{% url 'checkout:cart_update_quantity' item.product.id %}"
+                                                        data-price="{{ item.price }}" {# Prix unitaire au moment de l'ajout #}
+                                                        data-max-quantity="1000" {# Répété pour accès facile en JS #}
+                                                        >
+                                                    <div class="amount-controls right quantity-plus" role="button" aria-label="Увеличить количество">
+                                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="1" fill="#FFFFFF"></rect><rect x="7" y="1" width="1" height="12" fill="#FFFFFF"></rect></svg>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal" data-title="Итого">
+                                                {# total_price est calculé dans CartManager.__iter__ #}
+                                                <span class="item-total-price">{{ item.total_price|floatformat:"0"|intcomma }}</span> ₽
+                                            </td>
+                                            <td class="product-remove">
+                                                    <button type="button" class="button remove-button"
+                                                            data-product-id="{{ item.product.id }}"
+                                                            aria-label="Удалить {{ item.product.title }}">
+                                                        <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="15" x2="15" y2="1" stroke="#B2B9C1" stroke-width="2"></line><line x1="1" y1="1" x2="15" y2="15" stroke="#B2B9C1" stroke-width="2"></line></svg>
+                                                    </button>
+                                            </td>
+                                        </tr>
+                                        {% empty %}
+                                            <tr id="cart-empty-row-placeholder"><td colspan="5">Ваша корзина пуста.</td></tr> {# colspan=5 car on a 5 colonnes affichées #}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div> {# Fin cart__products #}
+
+                            {# --- Total sous le panier (mis à jour par JS) --- #}
+                            <div class="cart__payment-total">
+                                <div>Итого (товары):</div>
+                                {# Valeur initiale rendue par Django, formatée #}
+                                <div><span id="cart-subtotal-display">{{ cart.get_total_price|default:"0"|floatformat:"0"|intcomma }}</span> ₽</div>
+                            </div>
+
+                        </div> {# Fin container-basket #}
+
+                        {# --- Formulaire Infos Client --- #}
+                        <div class="cart__info">
+                            <div class="cart__info-caption">Ваши данные</div>
+                            <div id="customer-info-form-fields">
+                                {# Type Client #}
+                                <div class="form-group">
+                                    <div id="id_type_client">
+                                        {% for value, text in form.fields.type_client.choices %}
+                                        <div class="client-type-option">
+                                            <input type="radio" name="type_client" id="id_type_client_{{ forloop.counter }}" value="{{ value }}"
+                                                {% if form.type_client.value|stringformat:"s" == value|stringformat:"s" %}checked{% endif %} required>
+                                            <label for="id_type_client_{{ forloop.counter }}">{{ text }}</label>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    {% if form.type_client.errors %}<div class="invalid-feedback error">{{ form.type_client.errors|join:", " }}</div>{% endif %}
+                                </div>
+                                {# Nom #}
+                                <div class="form-group">
+                                    <input type="text" id="id_name" name="name" placeholder="Имя" value="{{ form.name.value|default_if_none:'' }}" required maxlength="100">
+                                    {% if form.name.errors %}<div class="invalid-feedback error">{{ form.name.errors|join:", " }}</div>{% endif %}
+                                </div>
+                                {# Email #}
+                                <div class="form-group">
+                                    <input type="email" id="id_email" name="email" placeholder="Почта" value="{{ form.email.value|default_if_none:'' }}" required>
+                                    {% if form.email.errors %}<div class="invalid-feedback error">{{ form.email.errors|join:", " }}</div>{% endif %}
+                                    <div class="invalid-feedback js-error" style="color: red; font-size: 0.9em; display: none; margin-top: 5px;"></div>
+
+                                </div>
+                                {# Téléphone #}
+                                <div class="form-group">
+                                    <input type="tel" id="id_phone" name="phone" placeholder="Телефон" value="{{ form.phone.value|default_if_none:'' }}" required data-phone>
+                                    {% if form.phone.errors %}<div class="invalid-feedback error">{{ form.phone.errors|join:", " }}</div>{% endif %}
+                                    <div class="invalid-feedback js-error" style="color: red; font-size: 0.9em; display: none; margin-top: 5px;"></div>
+                                </div>
+                                {# Adresse #}
+                                <div class="form-group">
+                                    <textarea id="id_address" name="address" placeholder="Адрес доставки" rows="3" required>{{ form.address.value|default_if_none:'' }}</textarea>
+                                    {% if form.address.errors %}<div class="invalid-feedback error">{{ form.address.errors|join:", " }}</div>{% endif %}
+
+                                </div>
+                                {# Fichier #}
+                                <div class="form-group">
+                                    {# Utilise le label du champ formulaire Django #}
+                                    <label for="id_file">{{ form.file.label }}</label>
+                                    <input type="file" id="id_file" name="file">
+                                    {% if form.file.help_text %}<small class="form-text text-muted form-text-help">{{ form.file.help_text }}</small>{% endif %}
+                                    {% if form.file.errors %}<div class="invalid-feedback error">{{ form.file.errors|join:", " }}</div>{% endif %}
+                                    <div id="file-error-message" class="invalid-feedback js-error" style="color: red; font-size: 0.9em; display: none; margin-top: 5px;"></div>
+                                </div>
+                                {# Accord #}
+                                <div class="block__agreement form-group">
+                                    <label for="id_agreement">
+                                        <input type="checkbox" id="id_agreement" name="agreement" value="true" {% if form.agreement.value|default:True %}checked{% endif %} required>
+                                        <div class="custom-icon"></div>
+                                        <div>Отправляя форму, вы даете согласие на обработку персональных данных</div>
+                                    </label>
+                                    {% if form.agreement.errors %}<div class="invalid-feedback error" style="display: block; margin-top: 5px;">{{ form.agreement.errors|join:", " }}</div>{% endif %}
+                                    <div class="invalid-feedback js-error" style="color: red; font-size: 0.9em; display: none; margin-top: 5px;"></div>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    {# --- Colonne Droite : Paiement et Finalisation --- #}
+                    <div class="cart__payment">
+                        <div class="cart__payment-caption">Условия заказа</div>
+
+                         {# Options de Livraison #}
+                        <div class="shipping-options" style="margin-top: 30px; margin-bottom: 30px;">
+                            <strong>Способ доставки </strong>
+                            <div class="form-group">
+                                <select name="shipping_method" id="shipping_method_select" class="form-control shipping-method-select">
+                                    <option value="">---------</option>
+                                    {% for value, text in shipping_choices %}
+                                        <option value="{{ value }}"
+                                                {% if value == DELIVERY_MKAD_OUTSIDE %}data-needs-km="true"{% endif %}
+                                                {% if value == selected_shipping_method %}selected{% endif %}>
+                                            {{ text }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div id="km-input-container" style="display: {% if selected_shipping_method == DELIVERY_MKAD_OUTSIDE %}block{% else %}none{% endif %}; margin-top: 10px;">
+                                <label for="shipping_distance_km_display">Расстояние за МКАД (км):</label>
+                                <input type="number" id="shipping_distance_km_display" name="shipping_distance_km"
+                                    min="1" step="1" value="{{ shipping_distance_km_session|default:'' }}"
+                                    class="km-input form-control" placeholder="км">
+                                <small class="form-text text-muted">50 ₽ / км</small>
+                            </div>
+                            <p id="shipping-russia-note" style="display: {% if selected_shipping_method == DELIVERY_RUSSIA %}inline{% else %}none{% endif %}; font-size: 12px; color: #347878; margin-top: 10px;">
+                                *Доставка по России осуществляется согласно тарифам выбранной транспортной компании при получении заказа
+                            </p>
+                        </div>
+
+                        {# Affichage Résumé Coûts #}
+                        <div class="cart-totals" style="margin-top: 20px; margin-bottom: 30px;">
+                            <h2>Итоги</h2>
+                            <p style="display: flex; justify-content: space-between;">
+                                <span class="label">Стоимость товаров:</span>
+                                <span class="value"><span id="cart-subtotal">{{ cart.get_total_price|default:"0"|floatformat:"0"|intcomma }}</span> <span class="currency">₽</span></span>
+                            </p>
+                            <p id="shipping-cost-line" style="display: {% if not selected_shipping_method %}none{% else %}flex{% endif %}; justify-content: space-between;">
+                                <span class="label">Стоимость доставки:</span>
+                                <span>
+                                    <span class="value" id="shipping-cost">0</span> <span class="currency">₽</span>
+                                    {% comment %} <small id="grand-total-russia-note" style="display: none; margin-left: 5px;">(будет рассчитана)</small> {% endcomment %}
+                                </span>
+                            </p>
+                            <hr>
+                            <p class="order-total" style="display: flex; justify-content: space-between;">
+                                <strong>Итоговая сумма:</strong>
+                                <span>
+                                    <strong id="grand-total">{{ cart.get_total_price|floatformat:"0"|intcomma }}</strong> <span class="currency">₽</span>
+                                    <small id="grand-total-russia-note-alt" style="display: none; margin-left: 5px;">(+ доставка)</small>
+                                </span>
+                            </p>
+                        </div>
+
+                        {# --- Choix du Paiement --- #}
+                        <div class="cart__payment-choose">
+                            <div class="cart__payment-title">Выберите способ оплаты <span class="required">*</span></div>
+                            {% for value, text in form.fields.payment_method.choices %}
+                                <label class="payment-option" for="id_payment_method_{{ forloop.counter0 }}">
+                                    <input class="payment-method-radio visually-hidden" type="radio" id="id_payment_method_{{ forloop.counter0 }}" name="payment_method" value="{{ value }}"
+                                        {# Condition simplifiée pour checked #}
+                                        {% if form.payment_method.value|stringformat:"s" == value|stringformat:"s" %}checked{% endif %} required data-description-id="desc-payment-{{ forloop.counter0 }}">
+                                    <span class="custom-radio-button"></span>
+                                    <span class="payment-title">{{ text }}</span>
+                                    <div class="hidden payment-description" id="desc-payment-{{ forloop.counter0 }}">
+                                        {% if value == 'get_offer' %}
+                                            Отправить заявку. Наш специалист свяжется с вами для уточнения деталей и формирования счета.
+                                        {% elif value == 'online_yookassa' %}
+                                            Оплата заказа на сайте банковской картой МИР. После оплаты на вашу почту придет чек,подтверждающий оплату.
+                                        {% elif value == 'cash' %} {# ATTENTION: Votre value est 'cash' mais le label est 'Наличными либо картой' ? Cohérence ? #}
+                                            Оплата наличными либо картой производится на адресе доставки курьеру только по Москве и Московской области.
+                                        {% elif value == 'on_delivery' %} {# J'ai supposé que 'Безналичной оплатой' était 'on_delivery' #}
+                                            После оформления заказа будет сформирован счёт на оплату. После поступления денежных средств на наш расчетный счёт, на ваш e-mail придёт уведомление о возможности отгрузки или доставки товара.
+                                        {% else %}
+                                            Описание для {{ text }}
+                                        {% endif %}    
+                                    </div>
+                                </label>
+                            {% endfor %}
+                            {% if form.payment_method.errors %}<div class="invalid-feedback error">{{ form.payment_method.errors|join:", " }}</div>{% endif %}
+                        </div>
+
+                        {# --- Affichage des erreurs générales du formulaire --- #}
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger non-field-errors" style="margin-top: 15px;">
+                                {% for error in form.non_field_errors %} <p>{{ error }}</p> {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        {# --- Bouton de Commande --- #}
+                        {% if cart %}
+                            <button type="submit" class="btn-checkout">Подтвердить заказ</button>
+                        {% endif %}
+
+                        {# --- Hidden Inputs pour Constantes JS --- #}
+                        <input type="hidden" id="shipping-mkad-outside-value" value="{{ DELIVERY_MKAD_OUTSIDE }}">
+                        <input type="hidden" id="shipping-mkad-inside-value" value="{{ DELIVERY_MKAD_INSIDE }}">
+                        <input type="hidden" id="shipping-russia-value" value="{{ DELIVERY_RUSSIA }}">
+                        <input type="hidden" id="subtotal-threshold" value="{{ SUBTOTAL_THRESHOLD }}">
+                        <input type="hidden" id="mkad-inside-low-cost" value="{{ MKAD_INSIDE_LOW_COST }}">
+                        <input type="hidden" id="mkad-outside-rate" value="{{ MKAD_OUTSIDE_RATE_PER_KM }}">
+
+                    </div> {# Fin cart__payment (colonne droite) #}
+                </div> {# Fin cart__wrapper #}
+            </div> {# Fin cart-content-container #}
+        </form> {# --- FIN DU FORMULAIRE PRINCIPAL --- #}
+    </div> {# Fin container #}
+</main>
+{% endblock %}

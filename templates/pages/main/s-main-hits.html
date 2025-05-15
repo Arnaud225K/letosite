@@ -1,0 +1,26 @@
+{% load static %}
+
+<section class="hits">
+    <div class="container">
+        <div class="section__title">Хиты</div>
+        <div class="hits__slider">
+            <div class="hits__slider-wrapper">
+                {% for hit_product in hit_products %}
+                    {% include "includes/cards/slider-product-card/slider-product-card.html" with product=hit_product %}
+                {% empty %}
+                    <p>No hit House Found</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="slider__controls">
+        <div class="slider__controls-left" id="hits-left"><svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M20 12H4 M10 6l-6 6 6 6" fill="none" stroke="#1D1D1D" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg></div>
+        <div class="slider__controls-right" id="hits-right"><svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M4 12h16 M14 6l6 6-6 6" fill="none" stroke="#1D1D1D" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg></div>
+        </div>
+    </div>
+</section>

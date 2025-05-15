@@ -1,0 +1,50 @@
+{% load static %}
+{% load nospaces %}
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{% block title_page %}{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        <meta name="format-detection" content="telephone=no">
+        <meta property="og:title" content="{% nospaces %}{% block title_page_og %}{% endblock %}{% endnospaces %}">
+		<meta property="og:url" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ request.path_info }}">
+        <meta property="og:description" content="{% nospaces %}{% block meta_description_og %}{% endblock %}{% endnospaces %}">
+		<meta property="og:image" content="{% static "img/favicon/favicon.png" %}">
+		<meta property="og:type" content="website">
+		<meta name="robots" content="noindex, nofollow">		
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+        {% if not current_menu.has_cover and not is_index %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/header_background.css'%}">
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-reboot.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon/leto-favicon.ico" %}">
+        <link rel="icon" type="image/png" href="{% static 'img/favicon/leto-favicon.png' %}">
+        {% if current_filial.text_head_filial %}{{ current_filial.text_head_filial|safe }}{% endif %}
+        {% if project_settings.text_head %}{{ project_settings.text_body|safe }}{% endif %}
+    </head>
+	<body>
+        <div class="overlay"></div>
+        <!-- header -->
+        {% include 'includes/header/header.html' %}
+        <!-- content -->
+        {% block content %}
+        {% endblock %}        
+        <!-- footer -->
+        {% include 'includes/footer/footer.html' %}
+        
+        {% block modal %}
+        {% endblock modal %}
+        <script src="{% static 'js/jquery-3.7.1.min.js' %}" defer></script>
+        <script src="{% static 'js/custom.js' %}" defer></script>
+        <script src="{% static 'js/main.js' %}" defer></script>
+        {% block script %}
+        {% endblock script %}
+        {% if current_filial.text_body_filial %}{{ current_filial.text_body_filial|safe }}{% endif %}
+        {% if project_settings.text_body %}{{ project_settings.text_body|safe }}{% endif %}
+    </body>
+</html>

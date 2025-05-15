@@ -1,0 +1,34 @@
+
+<div class="modal modal-feedback">
+    <div class="modal__close modal__close-feedback">
+        <svg width="20px" height="20px" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="1" y1="15" x2="15" y2="1" stroke="#B2B9C1" stroke-width="2"></line>
+            <line x1="1" y1="1" x2="15" y2="15" stroke="#B2B9C1" stroke-width="2"></line>
+        </svg>
+    </div>
+    <div class="modal__title">
+        <p>Задайте вопрос, направьте пожелание или оставьте отзыв о нашей работе.</p>
+        <p>Ответим в течение 24 часов</p>
+    </div>
+    <form class="modal__form" id="form_feedback_id" method="post" action="{% url 'checkout:send_form_order' %}" onsubmit="return send_form_order('form_feedback_id');"> 
+        {% csrf_token %}
+        <input name="form_input" value="">
+        <input type="hidden" name="type" value="Обратная связь">
+        <input type="hidden" name="phone" value="{{ current_filial.phone }}">
+
+        <input type="text" name="name" placeholder="Имя">
+        <input type="email" name="email" placeholder="Почта*" required>
+        <div id="email-error" class="email-error" style="display:none; color:red;">Неверный адрес электронной почты</div>
+        <textarea name="comment" placeholder="Текст сообщения"></textarea>
+
+        <div class="block__agreement">
+            <label>
+                <input type="checkbox" name="agreement" checked="checked" required>
+                <div class="custom-icon"></div>
+                <span>Отправляя форму, вы даете согласие на <a href="/policy/" target="_blank" class="contacts-form-link">обработку персональных данных</a></span>
+            </label>
+            <button type="submit" id="popup-feedback-btn" class="submit-form-btn">Отправить</button> 
+        </div>
+    </form>
+</div>

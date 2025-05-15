@@ -1,0 +1,20 @@
+{% load static %}
+{% load catalog_tags %}
+
+<main class="catalog">
+        <div class="container">
+        {% include 'includes/elements/breadcrumb.html' %}
+        
+        <div class="section__title catalog__title">
+            <h1>{{ current_menu.name }}</h1>
+        </div>
+        <div class="catalog__wrapper">
+            {% for category in current_menu.get_child %}
+                {% include "includes/cards/catalog-card/catalog-card.html" %}
+            {% endfor %}
+            {% for category in current_menu.get_childs %}
+                {% include "includes/cards/catalog-card/catalog-card.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</main>

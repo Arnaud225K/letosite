@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="modal modal-buy" id ="product-order-modal">
+    <div class="modal__close modal__close-buy">
+        <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <line x1="1" y1="15" x2="15" y2="1" stroke="#B2B9C1" stroke-width="2"></line>
+            <line x1="1" y1="1" x2="15" y2="15" stroke="#B2B9C1" stroke-width="2"></line>
+        </svg>
+    </div>
+    <span id="product-order-modal-title">Быстрый заказ / Под заказ</span>
+    <div class="modal-product">
+        <div class="modal-product__thumb">
+            <img id="modal-product-image" src="{% static 'img/images/default_image.webp' %}" alt="Изображение товара">
+        </div>            
+        <div class="modal-product__data">
+            <div id="modal-product-name">Название товара</div>
+            <div id="modal-product-sku">Название товара</div>
+            <div class="product-data__price">Цена: <span id="modal-product-price">0</span> ₽</div>
+            <div class="product-data__quantity">Кол-во: <span id="modal-product-quantity">1</span> шт.</div>
+        </div>
+    </div>
+    <form class="modal__form" id="product-order-modal-form" method="post" action="{% url 'checkout:send_form_order' %}" onsubmit="return send_form_order('product-order-modal-form');">
+        {% csrf_token %}
+        <input type="hidden" name="form_input" value="">
+        <input type="hidden" name="type" id="modal-order-type" value="">
+        <input type="hidden" name="product_id" id="modal-hidden-product-id" value="">
+        <input type="hidden" name="product_sku" id="modal-hidden-product-sku" value="">
+        <input type="hidden" name="product_title" id="modal-hidden-product-title" value="">
+        <input type="hidden" name="product_price" id="modal-hidden-product-price" value="">
+        <input type="hidden" name="product_quantity" id="modal-hidden-product-quantity" value="">
+        <input type="hidden" name="comment" id="modal-hidden-comment" value="">
+        <input type="hidden" name="email" value="buy@leto-moskva.ru">
+
+        <input type="text" name="name" placeholder="Имя">
+
+
+        <input type="tel" name="phone" placeholder="Телефон*" required data-phone>
+        <div id="phone-error" class="phone-error" style="display:none; color:red;">Неправильный номер телефона</div>
+        
+        <div class="block__agreement">
+            <label>
+                <input type="checkbox" name="agreement" checked="checked" required>
+                <div class="custom-icon"></div>
+                <span>Отправляя форму, вы даете согласие на <a href="/policy/" target="_blank" class="contacts-form-link">обработку персональных данных</a></span>
+            </label>
+            
+            <div class="invalid-feedback error js-error" style="display:none;"></div>
+        
+            <button type="submit" id="popup-buy-btn" class="submit-form-btn">Отправить</button>
+        </div>
+    </form>
+</div>

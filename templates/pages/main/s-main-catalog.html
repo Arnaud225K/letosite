@@ -1,0 +1,16 @@
+{% load static %}
+
+<section class="index-catalog">
+    <div class="container">
+        <div class="section__title">Каталог</div>
+        <div class="index-catalog-wrapper">
+
+        {% for category in categories_list %}
+            {% include "includes/cards/catalog-card/catalog-card.html" %}
+        {% empty %}
+            <p>No main category found</p>
+        {% endfor %}
+        </div>
+        <a class="index-catalog__link" href="/catalog/">Перейти в каталог</a>
+    </div>
+</section>

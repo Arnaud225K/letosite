@@ -1,0 +1,60 @@
+{% load static %}
+{% load catalog_tags %}
+
+
+<main>
+    <div class="background"> <img src="{% static 'img/images/service_cover.webp' %}" alt=""></div>
+    <div class="container">
+    <div class="cover">
+        <div class="cover-wrapper">
+            <div class="text">
+                <h1>Акции</h1>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="promo-listing">
+    <div class="container">
+        <div class="promo__caption">
+            <div class="promo__caption-sup">Акции</div>
+            <h1 class="promo__caption-title">Каталог акции</h1>
+            <p class="promo__caption-description">
+                Не пропустите нашу уникальную акцию! 
+                Сделайте свой дом оазис мечты по самым выгодным ценам и наслаждайтесь летом в комфорте!
+            </p>
+        </div>
+        
+        <div class="promo__list">
+            {% for promo in promo_list %}
+                <div class="promo-card">
+                    <div class="promo-card__header">
+                        <div class="promo-card__image">
+                            <img src="{{ promo.image.url }}" alt="{{ promo.name }}">
+                        </div>
+                        <div class="promo-card__text">
+                            <h3 class="promo-card__title">{{ promo.name }}</h3>
+                            <p class="promo-card__excerpt">
+                                {{ promo.description }}
+                            </p>
+                            <div class="promo-card__actions">
+                                <div class="promo-card__toggle">Подробнее</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-card__content">
+                        <div class="promo-card__content-inner">
+                            <div class="promo-card__description">
+                                <p>{{ promo.text|safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            {% empty %}
+            <span>Не найдено ни одной Акции!</span>
+            {% endfor %}    
+        </div>
+    </div>
+</div>
+</main>
+<!-- FORM CALCULATE COST -->
+{% include "includes/s-all/s-all-form-calcul/s-all-form-calcul.html" %}

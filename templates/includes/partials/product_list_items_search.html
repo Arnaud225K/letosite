@@ -1,0 +1,12 @@
+
+
+{% for product in product_list %}
+    {% include "includes/cards/search-card/search-card.html" %}
+{% empty %}
+    <div class="products-list__item_not_found">
+        <div class="products-list__item-not-found_caption">
+        <p>К сожалению, здесь ничего не найдено</p>
+        <p>Попробуйте изменить поисковый запрос или оставьте заявку на обратный звонок, и мы перезвоним вам</p>
+        </div>
+    </div>
+{% endfor %}

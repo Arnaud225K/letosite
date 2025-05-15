@@ -1,0 +1,29 @@
+{% load static %}
+
+<section class="page-form"> <img src="{% static 'img/images/form-image.webp' %}" alt="">
+    <div class="container">
+        <div class="page-form-wrapper">
+            <div class="page-form__caption">Рассчитать стоимость бассейна </div>
+            <form class="form_get_price" id="get_price-order-form" method="post" action="{% url 'checkout:send_form_order' %}" onsubmit="return send_form_order('get_price-order-form');">
+                {% csrf_token %}
+                <input name="form_input" value="">
+                <input type="hidden" name="comment" value="{{ current_menu.name }}">
+                <input type="hidden" name="type" value="Рассчитать стоимость бассейна">   
+
+                <input type="text" name="name" placeholder="Имя">
+                <input type="tel" name="phone" placeholder="Телефон*" required data-phone>
+                <div id="phone-error" class="phone-error" style="display:none; color:red;">Неправильный номер телефона</div>
+                <input type="email" name="email" placeholder="Почта*" required>
+                <div id="email-error" class="email-error" style="display:none; color:red;">Неверный адрес электронной почты</div>            
+                <div class="block__agreement">
+                    <label>
+                        <input type="checkbox" name="agreement" checked="checked" required>
+                        <div class="custom-icon"></div>
+                        <span>Отправляя форму, вы даете согласие на <a href="/policy/" target="_blank" class="contacts-form-link">обработку персональных данных</a></span>
+                    </label>
+                </div>
+                <button type="submit" id="popup-get-price-btn" class="submit-form-btn">Рассчитать</button>
+            </form>
+        </div>
+    </div>
+</section>

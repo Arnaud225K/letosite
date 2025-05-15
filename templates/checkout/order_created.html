@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+{% load checkout_filter %} 
+
+{% block content %}
+
+<main class="thank">
+<div class="container">
+
+
+<div class="section__title thank_title">
+    <h1>СПАСИБО ЗА ЗАКАЗ!</h1>
+</div>
+<p>Ваш заказ оформлен. Наш специалист свяжется с вами в ближайшее время.</p>
+<p>Номер вашего заказа: <strong>{{ order.order_key }}</strong></p>
+
+<div class="order-details-summary">
+    <h2>Детали заказа</h2>
+    <table class="order-details-table">
+        <tr>
+            <th>Способ оплаты</th>
+            <td>{{ order.get_payment_method_display }}</td> {# Utilise get_FOO_display #}
+        </tr>
+        <tr>
+            <th>Статус заказа</th>
+            <td>{{ order.get_status_display }}</td> {# Utilise get_FOO_display #}
+        </tr>
+         <tr>
+            <th>Способ доставки</th>
+            <td>
+                {{ order.get_shipping_method_display }} {# Utilise get_FOO_display #}
+                {% if order.shipping_method == order.DELIVERY_MKAD_OUTSIDE and order.shipping_distance_km %}
+                    ({{ order.shipping_distance_km }} км)
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Имя</th>
+            <td>{{ order.name }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ order.email }}</td>
+        </tr>
+        <tr>
+            <th>Телефон</th>
+            <td>{{ order.phone }}</td>
+        </tr>
+        <tr>
+            <th>Адрес доставки</th>
+            <td>{{ order.address }}</td>
+        </tr>
+        {% if order.file %}
+        <tr>
+            <th>Прикрепленный файл:</th>
+            <td><a href="{{ order.file.url }}" target="_blank">Просмотреть файл</a> ({{ order.file.name|filename }})</td>
+        </tr>
+        {% endif %}
+    </table>
+
+    <h3>Товары</h3>
+    <ul class="order-items-list">
+        {% for item in order.items.all %}
+            <li>
+                {{ item.quantity }} x {{ item.product_title }}
+                - {{ item.price }} {{ item.product.currencyId|default:"руб" }}
+                ( Итого: {{ item.get_cost }} {{ item.product.currencyId|default:"руб" }})
+            </li>
+        {% endfor %}
+    </ul>
+
+    {# --- Section Totaux --- #}
+    <div class="order-totals-summary">
+        <p>
+            <strong>Стоимость товаров</strong>
+            <span>{{ order.total_cost }} {{ request.session.currency|default:"руб" }}</span>
+        </p>
+        <p>
+            <strong>Стоимость доставки</strong>
+             <span>{{ order.shipping_cost }} {{ request.session.currency|default:"руб" }}</span>
+        </p>
+        <p class="grand-total">
+            <strong>Итоговая сумма</strong>
+            <strong>{{ order.get_grand_total }} {{ request.session.currency|default:"руб" }}</strong>
+        </p>
+         <p class="payment-status">
+            <strong>Статус оплаты</strong>
+             <span>{% if order.paid %}Оплачено{% else %}Не оплачено{% endif %}</span>
+         </p>
+    </div>
+</div>
+
+<button onclick="window.print();" class="btn btn-secondary">Распечатать заказ</button>
+
+<p style="margin-top: 20px;"><a href="{% url 'menu:index' %}" class="btn btn-link">Вернуться на главную</a></p>
+
+{# --- CSS Minimal (Adaptez à votre design) --- #}
+<style>
+    .order-details-summary { margin-bottom: 2em; }
+    .order-details-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5em; }
+    .order-details-table th, .order-details-table td {
+        border: 1px solid #eee;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+    .order-details-table th { background-color: #f9f9f9; font-weight: bold; width: 30%; }
+    .order-items-list { list-style: none; padding-left: 0; margin-bottom: 1.5em;}
+    .order-items-list li { padding: 5px 0; border-bottom: 1px dashed #eee; }
+    .order-totals-summary { border-top: 1px solid #ccc; padding-top: 1em; margin-top: 1em; }
+    .order-totals-summary p { display: flex; justify-content: space-between; margin-bottom: 0.5em; }
+    .order-totals-summary p.grand-total { font-size: 1.2em; font-weight: bold; margin-top: 0.5em; padding-top: 0.5em; border-top: 1px solid #ccc;}
+    .payment-status span { font-weight: bold; color: {% if order.paid %}green{% else %}red{% endif %};}
+    .btn { /* Style de base bouton */ display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; text-decoration: none; margin-right: 5px;}
+    .btn-secondary { color: #fff; background-color: #6c757d; border-color: #6c757d;}
+    .btn-link { color: #007bff; text-decoration: none; background-color: transparent; border: none; padding: 0;}
+</style>
+
+{# --- Filtre 'filename' (si nécessaire) --- #}
+{% comment %}
+Filtre pour extraire le nom de fichier :
+# templatetags/custom_filters.py
+from django import template
+import os
+register = template.Library()
+@register.filter
+def filename(value):
+    if hasattr(value, 'name'):
+        return os.path.basename(value.name)
+    return ''
+Et charger en haut: {% load custom_filters %}
+{% endcomment %}
+
+</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="container">
+    <div class="catalog-mobile">
+        <div class="menu-mobile">
+            <div class="menu-mobile__close">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <line x1="1" y1="15" x2="15" y2="1" stroke="black" stroke-width="2"></line>
+                <line x1="1" y1="1" x2="15" y2="15" stroke="black" stroke-width="2"></line>
+            </svg>
+            </div>
+            <a href="/catalog/" id="catalog-trigger">Каталог</a>
+            <a href="/stroitelstvo/">Строительство</a>
+            <a href="/uslugi/">Услуги</a>
+            <a href="/dostavka-i-oplata/">Доставка и оплата</a>
+            <a href="/contacts/">Контакты</a>
+            <a href="/obmen-i-vozvrat/">Возврат</a>
+            <a href="/policy/">Политика конфиденциальности</a>
+        </div>
+        <div class="menu-mobile__social">
+            {% for item in social_link %}
+                <a href="{{ item.name }}"><img src="{{ item.icon_image.url }}" alt="{{ item.icon_name}}" title="{{ item.icon_name}}"></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% block content %}
+<div id="content-main">
+    <h1>{{ title }}</h1>
+    <div class="module">
+        <h2>Сводка импорта</h2>
+        <p>Всего строк обработано: {{ summary.processed }}</p>
+        <p>Продуктов обновлено (категория или фильтры): {{ summary.updated }}</p>
+        <p>Строк пропущено (без изменений или SKU не найден): {{ summary.skipped }}</p>
+        <p>Строк с ошибками: {{ summary.failed_rows|length }}</p>
+
+        {% if summary.failed_rows %}
+            <h3>Ошибки по строкам:</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="border: 1px solid #ddd; padding: 8px;">Строка Excel</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">SKU</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Причина</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for error_row in summary.failed_rows %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">{{ error_row.row }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">{{ error_row.sku|default:"N/A" }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">{{ error_row.reason }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        <p style="margin-top: 20px;"><a href="{% url 'admin:menu_product_changelist' %}">Вернуться к списку продуктов</a></p>
+        <p><a href="{% url 'admin_m:product_import' %}">Импортировать другой файл</a></p>
+    </div>
+</div>
+{% endblock %}

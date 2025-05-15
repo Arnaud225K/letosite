@@ -1,0 +1,51 @@
+{% load static %}
+{% load catalog_tags %}
+
+
+<main>
+    <div class="background"> <img src="{% static 'img/images/service_cover.webp' %}" alt=""></div>
+    <div class="container">
+    <div class="cover">
+        <div class="cover-wrapper">
+            <div class="text">
+                <h1>Услуги</h1>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% comment %} <div class="container">
+        <div class="service">
+            <div class="service__caption">
+                <div class="service__caption-sup">Услуги</div>
+                <div class="service__caption-title">Каталог Услуг</div>
+            </div>
+            <div class="service__list">
+            {% for service in service_list %}
+                {% include "includes/cards/service-card/service-card.html" %}
+            {% endfor %}
+            </div>
+        </div>
+    </div> {% endcomment %}
+    <div class="service">
+    <div class="container">
+        <div class="service__caption">
+            <div class="service__caption-sup">Услуги</div>
+            <h1 class="service__caption-title">Каталог услуг</h1>
+            <p class="service__caption-description">
+                Мы предлагаем полный спектр услуг по установке и обслуживанию бассейнов 
+                от профессиональной команды с многолетним опытом работы.
+            </p>
+        </div>
+        
+        <div class="service__list">
+            {% for service in service_list %}
+                {% include "includes/cards/service-card/service-card.html" %}
+            {% empty %}
+            <span>Не найдено ни одной услуги!</span>
+            {% endfor %}    
+        </div>
+    </div>
+</div>
+</main>
+<!-- FORM CALCULATE COST -->
+{% include "includes/s-all/s-all-form-calcul/s-all-form-calcul.html" %}

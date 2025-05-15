@@ -1,0 +1,83 @@
+{% load static %}
+{% load catalog_tags %}
+
+<main>
+    <div class="container">
+        <div class="category">
+            <!-- product-list-filters-desktop -->
+            <div class="category-filters"
+                id="filters-container-desktop"
+                data-filter-ajax-url="{% url 'menu:ajax_filter_products' %}"
+                data-base-category-url="{{ base_category_url }}"
+                data-current-category-slug="{{ current_menu.slug }}"
+                >
+                    {% include "includes/partials/_filters_partial.html" with filter_panel_id_prefix="desktop-" %}
+            </div>
+            <div class="category-list">
+                {% include 'includes/elements/breadcrumb.html' %}
+                <h1 class="str-filter-title" data-base-title="{{ current_menu.name|escape }}">{{ current_menu.name }} {% if active_filters_display %}
+                    <span class="active-filters-indicator" >{{ active_filters_display }}</span>{% endif %}
+                    <span id="product-count-display-h1">{% if product_list_count %} {{ product_list_count }} {% endif %}</span>
+                    {% if current_page_number > 1 and total_pages > 1 %}
+                        <span class="page-number-indicator"> - Страница {{ current_page_number }}</span>
+                    {% endif %}
+                </h1>
+    
+                    <div class="mobile-click" id="mobile-toggle-filter">
+                    <div class="category__mobile-caption">
+                        <span>Фильтры</span>
+                        <img src="{% static 'img/images/filter.webp' %}" alt="filter">
+                    </div>
+                </div>
+                <div class="category__mobile">
+                    <div class="category__mobile-filters"
+                        id="filters-container-mobile"
+                        data-filter-ajax-url="{% url 'menu:ajax_filter_products' %}"
+                        data-base-category-url="{{ base_category_url }}"
+                        data-current-category-slug="{{ current_menu.slug }}"
+                        >
+                            {% include "includes/partials/_filters_partial.html" with filter_panel_id_prefix="mobile-" %}
+                    </div>                
+                </div>
+
+                {# --- Formulaire pour le Tri (le JS l'utilisera) --- #}
+                <form method="get" id="filter-sort-form" class="filter-sort-controls" action="{{ base_category_url }}">
+                    <div id="hidden-filter-inputs-for-sort"></div>
+                    <div class="category__sort">
+                        <select name="sort" class="category-list__sort" id="sort-select">
+                            <option value="" {% if not sort_type %}selected{% endif %}>По умолчанию</option>
+                            <option value="price_asc" {% if sort_type == 'price_asc' %}selected{% endif %}>По возрастанию цены</option>
+                            <option value="price_desc" {% if sort_type == 'price_desc' %}selected{% endif %}>По убыванию цены</option>
+                        </select>
+                    </div>
+                </form>
+                {# ---------------------------------------------------- #}
+                
+                <div class="category-list__wrapper" id="product-list-container">
+                    {% include "includes/partials/product_list_items.html" %}
+                </div>
+
+                {# --- Zone Pagination (sera mise à jour par AJAX) --- #}
+                <div id="pagination-container">
+                    {% include "includes/partials/_pagination_partial.html" with product_list=product_list paginator_range=paginator_range search_text=search_text current_category_url_no_filters=base_category_url active_filters_for_url=active_filters_for_url current_sort_for_url=sort_type %}
+                </div>
+                {# ----------------------------------------------- #}
+
+                <div id="show-more-container" {% if not product_list.has_next %}style="display: none;"{% endif %}>
+                    <button id="load-more-button" class="listing-showmore"
+                            data-current-page="{{ product_list.number }}"
+                            data-next-page-number="{% if product_list.has_next %}{{ product_list.next_page_number }}{% endif %}"
+                            type="button">
+                        Показать еще товары
+                    </button>
+                    <span id="loading-indicator" style="display: none; margin-left: 10px;">Загрузка...</span>
+                </div>
+            </div>
+        </div>
+        <div class="similar__categories">
+            {% for category in similar_categories %}
+                {% include "includes/cards/similar-category-card/similar-category-card.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</main>

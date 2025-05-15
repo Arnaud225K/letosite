@@ -1,0 +1,12 @@
+{% load static %}
+<!-- SEARCHINPUT -->
+<div class="mobile-search">
+    <div class="container">
+        <form class="mobile-search__form" method="GET" action="{% url 'search:results' %}">
+            <div class="mobile-search__form-wrapper">
+                <input  type="search" name="search" placeholder="Поиск" value="{{ search_text }}">
+                <button type="submit"><img src="{% static 'img/images/search.webp' %}" alt="search"></button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+
+<div class="container-breadcrumbs">
+	<div class="breadcrumps">
+		<ul>
+			{% if not is_index %}
+			<li><a href="/" title="Главная">Главная</a></li>
+			{% endif %}
+			{% if search_text %}
+				<li>{{ search_text }}</li>
+			{% elif offers_list %}
+				<li>Акции</li>
+			{% elif is_favorite_page %}
+				<li>Избранное</li>
+			{% elif is_thank_you %}
+				<li>Спасибо за заказ</li>
+			{% elif is_generic_error %}
+				<li>Ошибка</li>
+			{% elif is_generic_error_404 %}
+				<li>Ошибка 404 </li>
+			{% elif is_generic_error_500 %}
+				<li>Ошибка 500 </li>
+			{% elif current_menu.parent %}
+				{% if current_menu.parent.parent.parent.parent %}
+					<li>
+						<a href="{{current_menu.parent.parent.parent.parent.get_absolute_url }}">{{ current_menu.parent.parent.parent.parent.name }}</a>
+					</li>
+				{% endif %}
+				{% if current_menu.parent.parent.parent %}
+					<li>
+						<a href="{{ current_menu.parent.parent.parent.get_absolute_url }}">{{ current_menu.parent.parent.parent.name }}</a>
+					</li>
+				{% endif %}
+				{% if current_menu.parent.parent %}
+					<li>
+						<a href="{{ current_menu.parent.parent.get_absolute_url }}">{{ current_menu.parent.parent.name }}</a>
+					</li>
+				{% endif %}
+				<li>
+					<a href="{{ current_menu.parent.get_absolute_url }}">{{ current_menu.parent.name }}</a>
+				</li>
+				{% if product %}
+					<li>
+						<a href="{{ current_menu.get_absolute_url }}">{{ current_menu.name }}</a>
+					</li>
+					<li>{{ product.title }}</li>
+				{% else %}
+					<li>{{ current_menu.name }}</li>
+				{% endif %}
+			{% else %}
+				<li>{{ current_menu.name }}</li>
+			{% endif %}
+			{% if is_sitemap %}
+				<li>Карта сайта</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>

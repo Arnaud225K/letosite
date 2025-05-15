@@ -1,0 +1,75 @@
+{% load menu_extras %} {# <--- CHARGER LE FICHIER DE TAGS #}
+
+
+{% comment %} <form id="filters-form" method="get" action="{{ base_category_url }}">
+    <h2>Фильтры</h2>
+        {% if available_filters %}
+            {% for cat_slug, cat_data in available_filters.items %}
+                <div class="category-filters__item" data-filter-category="{{ cat_slug }}"> {# Ajout data-attribute #}
+                    <div class="category-filters__item-caption">{{ cat_data.name }}</div>
+                    <div class="category-filters__wrapper">
+                        {% for val_data in cat_data.values %}
+                            <div class="category-filters__item-filter">
+                                <label>
+                                    <input type="checkbox"
+                                        name="{{ cat_slug }}"
+                                        value="{{ val_data.slug }}"
+                                        class="filter-checkbox" {# Classe essentielle pour JS #}
+                                        {% if cat_slug in active_filters_dict and val_data.slug in active_filters_dict|get_item:cat_slug %}checked{% endif %}
+                                        >
+                                    <div class="custom-icon"></div>
+                                    {# Utilise val_data.name qui est le nom lisible de la valeur #}
+                                    <div>{{ val_data.name }}</div>
+                                </label>
+                                {# Affiche le compte de produits pour cette valeur DANS LE CONTEXTE ACTUEL #}
+                                <div class="amount">{{ val_data.count }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            {# Le bouton appliquer est retiré #}
+            {% if active_filters_dict %}
+                {# Lien pour effacer les filtres #}
+                <a href="{{ base_category_url }}" class="clear-filters-link" id="clear-filters-link">Сбросить все фильтры</a>
+            {% endif %}
+        {% else %}
+            <p>Нет доступных фильтров для этой категории.</p>
+        {% endif %}
+</form> {% endcomment %}
+
+<form id="{{ filter_panel_id_prefix|default:'filters-' }}form" method="get" action="{{ base_category_url }}">
+
+    <h2>Фильтры</h2>
+        {% if available_filters %}
+            {% for cat_slug, cat_data in available_filters.items %}
+                <div class="category-filters__item" data-filter-category="{{ cat_slug }}">
+                    <div class="category-filters__item-caption">{{ cat_data.name }}</div>
+                    <div class="category-filters__wrapper">
+                        {% for val_data in cat_data.values %}
+                            <div class="category-filters__item-filter">
+                                <label for="{{ filter_panel_id_prefix }}{{ cat_slug }}-{{ val_data.slug }}"> {# ID unique pour label #}
+                                    <input type="checkbox"
+                                        name="{{ cat_slug }}"
+                                        value="{{ val_data.slug }}"
+                                        class="filter-checkbox" {# Classe commune pour JS #}
+                                        id="{{ filter_panel_id_prefix }}{{ cat_slug }}-{{ val_data.slug }}" {# ID unique pour input #}
+                                        {% if cat_slug in active_filters_dict and val_data.slug in active_filters_dict|get_item:cat_slug %}checked{% endif %}
+                                        >
+                                    <div class="custom-icon"></div>
+                                    <div>{{ val_data.name }}</div>
+                                </label>
+                                <div class="amount">{{ val_data.count }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if active_filters_dict %}
+                <a href="{{ base_category_url }}" class="clear-filters-link" id="{{ filter_panel_id_prefix }}clear-filters-link">Сбросить все фильтры</a>
+            {% endif %}
+        {% else %}
+            <p>Нет доступных фильтров для этой категории.</p>
+        {% endif %}
+</form>

@@ -1,0 +1,51 @@
+header {
+    background-image:url(../img/images/service_cover.webp);
+    background-position: right 10%;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 30px;
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+header > * {
+    position: relative;
+    z-index: 2;
+}
+@media screen and (max-width: 992px) {
+    .header-mobile {
+        height: 140px;
+        background-image: url(../img/images/service_cover.webp);
+        background-position: right 10%;
+        background-size: cover;
+        position: relative;
+        padding-bottom: 40px;
+    }
+    .header-mobile::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+        z-index: 1;
+    }
+    .header-mobile > * {
+        position: relative;
+        z-index: 2;
+    }
+    .mobile-search__form {
+        top: -50px;
+    }
+    .breadcrumps {
+        margin-top: 0;
+    }
+}

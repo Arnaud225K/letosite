@@ -1,0 +1,178 @@
+{% load static %}
+{% load catalog_tags %}
+{% load humanize %}
+
+<main class="product-card">
+    <div class="container">
+        {% include 'includes/elements/breadcrumb.html' %}
+        <div class="product-card__title">
+            <h1>{{ product.title }}</h1>
+        </div>
+        <div class="card">
+            <div class="card__images">
+                <div class="card__images-slider">
+                    <div class="card__images-slider__wrapper">
+                        {% if product.image %}
+                            <div class="card__images-slider__slide"> <img src="{{ product.get_main_image_url }}" alt="{{ product.title  }}"></div>
+                        {% else %}
+                            <div class="card__images-slider__slide"> <img src="{% static 'img/images/default_image.webp' %}" alt="Default product image"></div>
+                        {% endif %}
+                        {% comment %} <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-2.webp' %}" alt="prod_slide-1"></div>
+                        <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-3.webp' %}" alt="prod_slide-1"></div>
+                        <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-4.webp' %}" alt="prod_slide-1"></div>
+                        <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-1.webp' %}" alt="prod_slide-1"></div>
+                        <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-2.webp' %}" alt="prod_slide-1"></div>
+                        <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-3.webp' %}" alt="prod_slide-1"></div>
+                        <div class="card__images-slider__slide"> <img src="{% static 'img/images/prod_slide-4.webp' %}" alt="prod_slide-1"></div> {% endcomment %}
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+                <div class="card__images-picture"> 
+                    {% if product.image %}
+                        <img src="{{ product.get_main_image_url  }}" alt="{{ product.title  }}">
+                    {% else %}
+                        <img src="{% static 'img/images/default_image.webp' %}" alt="Default product image">
+                    {% endif %}
+                    {% if not product.available %}
+                        <div class="not_in_stock">Нет в наличии</div>
+                    {% endif  %}
+                </div>
+            </div>
+            <div class="card__characteristics">
+                <div class="card__characteristics-line"> 
+                    <a href="#"> 
+                        <span>Распечатать</span>
+                        <img src="{% static 'img/images/print.webp' %}" alt="image print">
+                    </a>
+                </div>
+                <div class="card__characteristics-line">
+                    <div>Артикул </div>
+                    <div>{{ product.sku }}</div>
+                </div>
+                <div class="card__characteristics-line">
+                    <div>ЦЕНА</div>
+                    <div> 
+                        {% if product.price > 0 %}
+                            <span class="price_num">{{ product.price|intcomma }} ₽</span>
+                        {% else %}
+                            Цена по запросу
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="card__characteristics-line">
+                    <div>Количество</div>
+                        {# --- Wrapper pour la quantité et les boutons d'action --- #}
+                        <div class="price product-actions">
+                            <div class="amount product-detail-amount">
+                                <div class="amount-controls left quantity-minus" role="button" aria-label="Уменьшить количество">
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="1" fill="#FFFFFF"></rect></svg>
+                                </div>
+                                {# Input quantité pour cette page spécifique #}
+                                <input class="amount-input quantity-input-detail"
+                                    type="number" value="1" id="product-quantity-{{ product.id }}" {# ID unique #}
+                                    min="1" max="1000" step="1"
+                                    aria-label="Количество товара {{ product.title }}">
+                                <div class="amount-controls right quantity-plus" role="button" aria-label="Увеличить количество">
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="7" width="12" height="1" fill="#FFFFFF"></rect><rect x="7" y="1" width="1" height="12" fill="#FFFFFF"></rect></svg>
+                                </div>
+                            </div>
+                            <div class="price__btns">
+                                {% if product.available %}
+                                    {# --- Bouton Ajouter au Panier avec data attributes --- #}
+                                    <form class="add-to-cart-form" onsubmit="return false;" style="display: inline;">
+                                        {% csrf_token %} 
+                                        <button type="button" class="add_to_cart add-to-cart-button"
+                                                data-product-id="{{ product.id }}"
+                                                data-add-url="{% url 'checkout:cart_add' product.id %}">
+                                            В корзину
+                                        </button>
+                                        <span class="add-to-cart-spinner" style="display: none;"></span>
+                                    </form>
+                                    {# ------------------------------------------------- #}
+                                    {% comment %} <button type="button" data-open="buy">Быстрый заказ</button> {% endcomment %}
+                                    {% include "includes/elements/button-data/button-data-bistry-zakaz.html" %}
+                                {% else %}
+                                    {% include "includes/elements/button-data/button-data-pod-zakaz.html" %}
+                                {% endif %}
+                                
+                            </div>
+                        </div>
+                </div>
+                <div class="card__characteristics-line">
+                    <div>Описание</div>
+                    <div>
+                        {% if product.description %}
+                            {{ product.description|safe }}
+                        {% else %}
+                        <p>Прозрачная крышка с воздушным клапаном на обжимном хомуте с нарезным креплением</p>
+                        <p>Многопозиционный кран, позволяет выбрать любой из режимов работы фильтра </p>
+                        <p>Дренажная пробка</p>
+                        <p>Песочный/водный дренаж высокого давления для быстрой консервации на зиму и быстрого обслуживания</p>
+                        <p>Максимальная скорость фильтрации 50 м3/ч/м2</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="details__title">Детали</div>
+            <div class="details__wrapper">
+            <div class="details__line">
+                <div>страна производства</div>
+                <div>Россия</div>
+            </div>
+            <div class="details__line">
+                <div>производитель</div>
+                <div>Aquaviva </div>
+            </div>
+            <div class="details__line">
+                <div>форма выпуска</div>
+                <div>жидкость</div>
+            </div>
+            <div class="details__line">
+                <div>гарантия</div>
+                <div>36 месяцев</div>
+            </div>
+            <div class="details__line">
+                <div>дополнительно</div>
+                <div>
+                <p>Препарат поставляется в жидком виде</p>
+                <p>Для понижения уровня pH на 0.1 необходимо добавить препарат АкваДоктор рН- из расчета 10 мл средства
+                    на 1 м³ воды</p>
+                <p>Необходимо 1-2 раза в неделю проверять уровень pH , а также после выпадения осадков (для открытых
+                    бассейнов)</p>
+                <p>Продукция сертифицирована</p>
+                </div>
+            </div>
+            <div class="details__line">
+                <div>условия доставки</div>
+                <div>Доставка осуществляется после 100% предоплаты</div>
+            </div>
+            <div class="details__line">
+                <div>скачиваемые материалы</div>
+                <div>Инструкция </div>
+            </div>
+            </div>
+        </div>
+        <div class="similar-products">
+            <div class="similar-products__title">Похожие товары</div>
+            <div class="hits__slider">
+            <div class="hits__slider-wrapper">
+                {% for similar_prod in similar_products %}
+                    {% include "includes/cards/slider-product-card/slider-product-card.html" with product=similar_prod %}
+                {% endfor %}
+            </div>
+            </div>
+            <div class="slider__controls">
+            <div class="slider__controls-left" id="hits-left"><svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M20 12H4 M10 6l-6 6 6 6" fill="none" stroke="#1D1D1D" stroke-width="1" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg></div>
+            <div class="slider__controls-right" id="hits-right"><svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M4 12h16 M14 6l6 6-6 6" fill="none" stroke="#1D1D1D" stroke-width="1" stroke-linecap="round"
+                    stroke-linejoin="round"> </path>
+                </svg></div>
+            </div>
+        </div>
+    </div>
+</main>

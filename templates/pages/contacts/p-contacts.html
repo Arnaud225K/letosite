@@ -1,0 +1,90 @@
+{% load static %}
+{% load catalog_tags %}
+
+
+<main>
+    <div class="background"> <img src="{% static 'img/images/contacts_cover.webp' %}" alt=""></div>
+    <div class="container">
+        <div class="cover">
+            <div class="cover-wrapper">
+                <div class="text"><h1>Контакты</h1></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contacts__wrapper">
+            <div class="contacts__block">
+                <div class="contacts__block-item">
+                    <div class="contacts__block_caption">Время работы</div>
+                    <div class="info">Ежедневно {{ current_filial.rezhim }}</div>
+                </div>
+                <div class="contacts__block-item">
+                    <div class="contacts__block_caption">ПРИЕМ ЗАКАЗОВ НА САЙТЕ </div>
+                    <div class="info">круглосуточно</div>
+                </div>
+            </div>
+            <div class="contacts__block">
+                <div class="contacts__block-item">
+                    <div class="contacts__block_caption">Телефон </div>
+                    <a class="info" href="tel:{{ current_filial.phone|remove_space_href}}">{{ current_filial.phone }}</a>
+                </div>
+                <div class="contacts__block-item">
+                    <div class="contacts__block_caption">Почта</div>
+                    <a class="info" href="mailto:{{ current_filial.email }}">{{ current_filial.email }}</a>
+                </div>
+            </div>
+            <div class="contacts__block">
+                <div class="menu-mobile__social">
+                    {% for item in social_link %}
+                        <a href="{{ item.name }}"><img src="{{ item.icon_image.url }}" alt="{{ item.icon_name}}" title="{{ item.icon_name}}"></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="map-section">
+            <div class="map-section__title">Пункты самовывоза</div>
+            <div class="map-section__description">Введите ваш адрес, и мы покажем доступные варианты</div>
+            <div class="map-section__map">
+                {{ current_filial.geo|safe }}
+            </div>
+        </div>
+    </div><!-- BANK DETAILS-->
+    <div class="container">
+        <div class="bank__details">
+            {% if current_filial.req_file %}
+            <a class="bank__details-download" href="{{ current_filial.req_file.url }}" target="_blank"> 
+                <img src="{% static 'img/images/document-download.webp' %}" alt="Скачать реквизиты">
+                <span>Скачать реквизиты</span>
+            </a>
+            {% endif %}
+            <div class="bank__details-data">
+                <div class="data-col">
+                    <p>ИП {{ current_filial.director_req }}</p>
+                    <p>ИНН {{ current_filial.inn_req }}</p>
+                    <p>ОГРНИП {{ current_filial.ogrn_req }}</p>
+                </div>
+                <div class="data-col">
+                    <p>Банк ООО {{ current_filial.bank_req }}</p>
+                    <p>р/с 40802810101500455351</p>
+                    <p>БИК {{ current_filial.bik_req }}</p>
+                    <p>к/с 30101810745374525104</p>
+                </div>
+            </div>
+        </div>
+    </div><!-- FEEDBACK -->
+    <div class="feedback">
+        <div class="container">
+            <div class="feedback-wrapper">
+                <div class="feedback-title">Обратная связь</div>
+                <div class="feedback-description">Задайте вопрос, направьте пожелание или оставьте отзыв о нашей работе. Ответим в течение 24 часов</div>
+                <button data-open="feedback">Написать сообщение</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+

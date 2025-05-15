@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load catalog_tags %}
+
+
+{% block meta_description %}
+	{{ txt }}Поиск {{ search_text }}
+{% endblock %}
+
+{% block meta_keywords %}
+	{{ txt }}Поиск {{ search_text }}
+{% endblock %}
+
+{% block title_page %}
+	{{ txt }}Поиск {{ search_text }}
+{% endblock %}
+
+{% block title_page_og %}
+	{{ txt }}Поиск {{ search_text }}
+{% endblock %}
+
+{% block meta_description_og %}
+	{{ txt }}Поиск {{ search_text }}
+{% endblock %}
+
+
+{% block content %}
+    {% include "pages/search-listing/p-search-listing.html" %}
+{% endblock %}
