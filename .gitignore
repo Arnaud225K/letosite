@@ -173,3 +173,4 @@ robots.txt
 */**/__pycache__
 touch_reload
 www/*
+nginx/*
